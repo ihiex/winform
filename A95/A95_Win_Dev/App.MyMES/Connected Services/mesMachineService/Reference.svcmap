@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="671194ed-3d9c-4c8c-a762-9a4a616cfcf6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesMachine.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesMachine2.xsd" MetadataType="Schema" ID="6ba81769-b7ae-4831-a486-85ad09db5749" SourceId="1" SourceUrl="http://localhost:55368/mesMachine.svc?xsd=xsd1" />
+    <MetadataFile FileName="mesMachineSVC.wsdl" MetadataType="Wsdl" ID="a0a27211-8c27-4717-8a2f-f228410464f5" SourceId="1" SourceUrl="http://localhost:55368/mesMachine.svc?wsdl" />
+    <MetadataFile FileName="mesMachine.xsd" MetadataType="Schema" ID="213bad70-b354-40e8-9e28-714022386bf2" SourceId="1" SourceUrl="http://localhost:55368/mesMachine.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesMachine3.xsd" MetadataType="Schema" ID="3d55b9ec-6f63-4039-a20d-688dd9a90d76" SourceId="1" SourceUrl="http://localhost:55368/mesMachine.svc?xsd=xsd3" />
+    <MetadataFile FileName="mesMachine1.xsd" MetadataType="Schema" ID="f39390e5-655b-4552-91a1-b874bda45796" SourceId="1" SourceUrl="http://localhost:55368/mesMachine.svc?xsd=xsd2" />
+    <MetadataFile FileName="mesMachine.disco" MetadataType="Disco" ID="ba3a92e9-ccb2-44fc-b373-89b5c72ed9a9" SourceId="1" SourceUrl="http://localhost:55368/mesMachine.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

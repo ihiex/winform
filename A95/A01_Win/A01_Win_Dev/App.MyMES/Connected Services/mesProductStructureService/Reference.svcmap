@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="64802759-d8e3-4d33-8e42-4204b2f5dc5a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesProductStructure.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesProductStructure.xsd" MetadataType="Schema" ID="c9299787-7f9b-43f4-bb1a-7ead116934ab" SourceId="1" SourceUrl="http://localhost:55368/mesProductStructure.svc?xsd=xsd1" />
+    <MetadataFile FileName="mesProductStructure.disco" MetadataType="Disco" ID="798909f7-f1c1-47a3-a318-81942e32a684" SourceId="1" SourceUrl="http://localhost:55368/mesProductStructure.svc?disco" />
+    <MetadataFile FileName="mesProductStructureSVC.wsdl" MetadataType="Wsdl" ID="585e1ca5-1c43-4997-bec7-4fb1fcf3fe10" SourceId="1" SourceUrl="http://localhost:55368/mesProductStructure.svc?wsdl" />
+    <MetadataFile FileName="mesProductStructure1.xsd" MetadataType="Schema" ID="3a9df0c8-b390-40ad-a053-006fad4155c5" SourceId="1" SourceUrl="http://localhost:55368/mesProductStructure.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesProductStructure2.xsd" MetadataType="Schema" ID="2ea07679-ad6b-4769-95f7-0c3bb6b3610e" SourceId="1" SourceUrl="http://localhost:55368/mesProductStructure.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

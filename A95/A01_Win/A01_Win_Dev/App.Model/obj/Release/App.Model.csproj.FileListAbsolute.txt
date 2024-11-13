@@ -1,0 +1,15 @@
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.Model\bin\Release\App.Model.dll
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.Model\bin\Release\App.Model.pdb
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.Model\obj\Release\App.Model.Properties.Resources.resources
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.Model\obj\Release\App.Model.csproj.GenerateResource.cache
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.Model\obj\Release\App.Model.csproj.CoreCompileInputs.cache
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.Model\obj\Release\App.Model.dll
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.Model\obj\Release\App.Model.pdb
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.Model\bin\Release\App.Model.dll
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.Model\bin\Release\App.Model.pdb
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.Model\obj\Release\App.Model.csprojAssemblyReference.cache
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.Model\obj\Release\App.Model.Properties.Resources.resources
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.Model\obj\Release\App.Model.csproj.GenerateResource.cache
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.Model\obj\Release\App.Model.csproj.CoreCompileInputs.cache
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.Model\obj\Release\App.Model.dll
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.Model\obj\Release\App.Model.pdb

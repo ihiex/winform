@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a44d18f0-8941-40cc-93e4-eeca68b33fd5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/luEmployeeGroup.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="luEmployeeGroup.xsd" MetadataType="Schema" ID="7a3185eb-12ab-466b-91d6-e8f8b8356dc3" SourceId="1" SourceUrl="http://localhost:55368/luEmployeeGroup.svc?xsd=xsd1" />
+    <MetadataFile FileName="luEmployeeGroupSVC.wsdl" MetadataType="Wsdl" ID="706c61ee-32aa-420f-9356-6f3f0dea01b9" SourceId="1" SourceUrl="http://localhost:55368/luEmployeeGroup.svc?wsdl" />
+    <MetadataFile FileName="luEmployeeGroup.disco" MetadataType="Disco" ID="50f10b0e-29c1-4f0d-827d-cfbd5f7f25cf" SourceId="1" SourceUrl="http://localhost:55368/luEmployeeGroup.svc?disco" />
+    <MetadataFile FileName="luEmployeeGroup1.xsd" MetadataType="Schema" ID="51ebe851-12f3-475b-ac6d-654efb15f11e" SourceId="1" SourceUrl="http://localhost:55368/luEmployeeGroup.svc?xsd=xsd2" />
+    <MetadataFile FileName="luEmployeeGroup2.xsd" MetadataType="Schema" ID="29e742bb-be08-4fd6-a658-9c6a0a5d42a8" SourceId="1" SourceUrl="http://localhost:55368/luEmployeeGroup.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

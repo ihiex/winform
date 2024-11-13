@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55368/DataCommit.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/App.Model" />
+  <xs:import schemaLocation="http://localhost:55368/DataCommit.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="SubmitDataUH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnit" nillable="true" type="q1:ArrayOfmesUnit" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesHistory" nillable="true" type="q2:ArrayOfmesHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitDataUHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitDataUHResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitDataUHD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnit" nillable="true" type="q3:ArrayOfmesUnit" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesHistory" nillable="true" type="q4:ArrayOfmesHistory" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnitDefect" nillable="true" type="q5:ArrayOfmesUnitDefect" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitDataUHDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitDataUHDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitDataUHCD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnit" nillable="true" type="q6:ArrayOfmesUnit" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesHistory" nillable="true" type="q7:ArrayOfmesHistory" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnitComponent" nillable="true" type="q8:ArrayOfmesUnitComponent" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnitDefect" nillable="true" type="q9:ArrayOfmesUnitDefect" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitDataUHCDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitDataUHCDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitDataUHC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnit" nillable="true" type="q10:ArrayOfmesUnit" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesHistory" nillable="true" type="q11:ArrayOfmesHistory" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnitComponent" nillable="true" type="q12:ArrayOfmesUnitComponent" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesMaterialConsumeInfo" nillable="true" type="q13:ArrayOfmesMaterialConsumeInfo" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesMachine" nillable="true" type="q14:ArrayOfmesMachine" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="F_LoginList" nillable="true" type="q15:LoginList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitDataUHCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitDataUHCResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUDS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="v_mesUnit" nillable="true" type="q16:mesUnit" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="v_mesUnitDetail" nillable="true" type="q17:mesUnitDetail" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="v_mesSerialNumber" nillable="true" type="q18:mesSerialNumber" />
+        <xs:element minOccurs="0" name="S_ObjSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUDSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUDSResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatemesUnit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="v_mesUnit" nillable="true" type="q19:mesUnit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatemesUnitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatemesUnitResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertALL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnit" nillable="true" type="q20:ArrayOfmesUnit" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnitDetail" nillable="true" type="q21:ArrayOfmesUnitDetail" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesHistory" nillable="true" type="q22:ArrayOfmesHistory" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesSerialNumber" nillable="true" type="q23:ArrayOfmesSerialNumber" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnitComponent" nillable="true" type="q24:ArrayOfmesUnitComponent" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnitDefect" nillable="true" type="q25:ArrayOfmesUnitDefect" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesMachine" nillable="true" type="q26:ArrayOfmesMachine" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="F_LoginList" nillable="true" type="q27:LoginList" />
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="L_TLinkT" nillable="true" type="q28:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertALLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertALLResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitDataUH_UDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnit" nillable="true" type="q29:ArrayOfmesUnit" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesHistory" nillable="true" type="q30:ArrayOfmesHistory" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="List_mesUnitDetail" nillable="true" type="q31:ArrayOfmesUnitDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitDataUH_UDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitDataUH_UDetailResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uspPalletPackaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PartID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ProductionOrderID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_CartonSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_PalletSN" nillable="true" type="xs:string" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="loginList" nillable="true" type="q32:LoginList" />
+        <xs:element minOccurs="0" name="S_BillNO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PalletQty" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uspPalletPackagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uspPalletPackagingResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveShipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_BillNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_MultipackSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_ProdOrderID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_PartID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_EmployeeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveShipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MoveShipmentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetShipmentMultipack">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_BillNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_MultipackSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_MultipackPalletSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetShipmentMultipackResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetShipmentMultipackResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMesPackageShipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShipmentDetailID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Type" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMesPackageShipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetMesPackageShipmentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMesPackageShipmentRoll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_BillNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_MultipackPalletSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_MultipackSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_ShipmentDetailID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMesPackageShipmentRollResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetMesPackageShipmentRollResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipmentPalletSN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_BillNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipmentPalletSNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetShipmentPalletSNResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIsOutCountComplete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_BillNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_MultipackPalletSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_ShipmentDetailID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="B_ScanOver" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIsOutCountCompleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetIsOutCountCompleteResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uspPalletPackagingPrintOne">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PartID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ProductionOrderID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_CartonSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_PalletSN" nillable="true" type="xs:string" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/App.Model" minOccurs="0" name="loginList" nillable="true" type="q33:LoginList" />
+        <xs:element minOccurs="0" name="PalletQty" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uspPalletPackagingPrintOneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uspPalletPackagingPrintOneResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveShipmentPrintOne">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_BillNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_MultipackSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_ProdOrderID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_PartID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_EmployeeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveShipmentPrintOneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MoveShipmentPrintOneResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetShipmentMultipackPrintOne">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_BillNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_MultipackSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetShipmentMultipackPrintOneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetShipmentMultipackPrintOneResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMesPackageShipmentPrintOne">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShipmentDetailID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Type" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMesPackageShipmentPrintOneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetMesPackageShipmentPrintOneResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMesPackageShipmentRollPrintOne">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_BillNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_MultipackSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMesPackageShipmentRollPrintOneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetMesPackageShipmentRollPrintOneResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCancelInWH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_BoxSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_ProdID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_PartID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_EmployeeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCancelInWHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetCancelInWHResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCancelInWHEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_BoxSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_ProdID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_PartID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_EmployeeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_ReturnToStationTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_ReturnStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCancelInWHEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetCancelInWHEntryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2c2543ca-2ed0-454b-a4e5-54aba0f6409a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesRouteDetail.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesRouteDetailSVC.wsdl" MetadataType="Wsdl" ID="f08e612c-7fca-4d68-8115-131b61e613eb" SourceId="1" SourceUrl="http://localhost:55368/mesRouteDetail.svc?wsdl" />
+    <MetadataFile FileName="mesRouteDetail.disco" MetadataType="Disco" ID="6d58f3df-bbb7-4a4b-bc0b-59c6a4038d30" SourceId="1" SourceUrl="http://localhost:55368/mesRouteDetail.svc?disco" />
+    <MetadataFile FileName="mesRouteDetail1.xsd" MetadataType="Schema" ID="25edb4e5-3a9c-476c-950a-6574de6d5e29" SourceId="1" SourceUrl="http://localhost:55368/mesRouteDetail.svc?xsd=xsd2" />
+    <MetadataFile FileName="mesRouteDetail3.xsd" MetadataType="Schema" ID="38a5d4b5-3459-4804-9f62-22d51611cc0f" SourceId="1" SourceUrl="http://localhost:55368/mesRouteDetail.svc?xsd=xsd3" />
+    <MetadataFile FileName="mesRouteDetail2.xsd" MetadataType="Schema" ID="5f78166e-2014-477f-9112-91a0e597b8ea" SourceId="1" SourceUrl="http://localhost:55368/mesRouteDetail.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesRouteDetail.xsd" MetadataType="Schema" ID="9c417313-c678-4109-b5a6-cd1fa9a6ecea" SourceId="1" SourceUrl="http://localhost:55368/mesRouteDetail.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

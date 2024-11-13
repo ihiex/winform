@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="58e078a2-5979-4437-ba2c-9d2bf905d6ab" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/luPartDetailDef.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="luPartDetailDef.xsd" MetadataType="Schema" ID="063b7f8c-d2fa-4279-8ce6-50c737e49d88" SourceId="1" SourceUrl="http://localhost:55368/luPartDetailDef.svc?xsd=xsd0" />
+    <MetadataFile FileName="luPartDetailDef.disco" MetadataType="Disco" ID="56485a87-62d6-4813-9e0b-377ac62a7757" SourceId="1" SourceUrl="http://localhost:55368/luPartDetailDef.svc?disco" />
+    <MetadataFile FileName="luPartDetailDef1.xsd" MetadataType="Schema" ID="a87a2ffc-cd4a-413a-a0fb-e4a63ac371e1" SourceId="1" SourceUrl="http://localhost:55368/luPartDetailDef.svc?xsd=xsd2" />
+    <MetadataFile FileName="luPartDetailDefSVC.wsdl" MetadataType="Wsdl" ID="dfad0ccd-b88b-4590-a152-a5db9c0e072c" SourceId="1" SourceUrl="http://localhost:55368/luPartDetailDef.svc?wsdl" />
+    <MetadataFile FileName="luPartDetailDef2.xsd" MetadataType="Schema" ID="0191c8f4-b65b-4fca-adce-1a40a18f3604" SourceId="1" SourceUrl="http://localhost:55368/luPartDetailDef.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4f1afb2c-29dd-4f16-ab2f-6e358600111c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesUnitDefect.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesUnitDefectSVC.wsdl" MetadataType="Wsdl" ID="9bbfef78-6578-4731-b13e-b95920c5f7a0" SourceId="1" SourceUrl="http://localhost:55368/mesUnitDefect.svc?wsdl" />
+    <MetadataFile FileName="mesUnitDefect.disco" MetadataType="Disco" ID="bca9a884-0e9b-44b4-994d-2806d64a1ebb" SourceId="1" SourceUrl="http://localhost:55368/mesUnitDefect.svc?disco" />
+    <MetadataFile FileName="mesUnitDefect.xsd" MetadataType="Schema" ID="abd8287c-3550-42aa-98c7-df2269fb5c7d" SourceId="1" SourceUrl="http://localhost:55368/mesUnitDefect.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesUnitDefect1.xsd" MetadataType="Schema" ID="2c23c3ab-8325-470f-855a-89047bba36cb" SourceId="1" SourceUrl="http://localhost:55368/mesUnitDefect.svc?xsd=xsd2" />
+    <MetadataFile FileName="mesUnitDefect2.xsd" MetadataType="Schema" ID="171a1782-518e-4538-8a86-fbea10bf4d89" SourceId="1" SourceUrl="http://localhost:55368/mesUnitDefect.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

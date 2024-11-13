@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a339ead4-d477-4031-b509-566eb7f1f1d7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/luUnitStatus.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="luUnitStatus.xsd" MetadataType="Schema" ID="6e4e4aaf-7b6a-4754-bca1-f0b539ecde8a" SourceId="1" SourceUrl="http://localhost:55368/luUnitStatus.svc?xsd=xsd1" />
+    <MetadataFile FileName="luUnitStatus1.xsd" MetadataType="Schema" ID="03c0c96b-61d2-43e9-9974-66b5c38a011c" SourceId="1" SourceUrl="http://localhost:55368/luUnitStatus.svc?xsd=xsd0" />
+    <MetadataFile FileName="luUnitStatus.disco" MetadataType="Disco" ID="579b6ea2-964d-4602-978c-25802385cbf7" SourceId="1" SourceUrl="http://localhost:55368/luUnitStatus.svc?disco" />
+    <MetadataFile FileName="luUnitStatusSVC.wsdl" MetadataType="Wsdl" ID="8aee3845-075b-42f8-a010-c0bf15e8e12a" SourceId="1" SourceUrl="http://localhost:55368/luUnitStatus.svc?wsdl" />
+    <MetadataFile FileName="luUnitStatus2.xsd" MetadataType="Schema" ID="7d5d4613-04d2-4bb1-a39a-363deb947d02" SourceId="1" SourceUrl="http://localhost:55368/luUnitStatus.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

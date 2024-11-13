@@ -1,0 +1,2984 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A68F2B1F-7E55-45EE-8F42-FA97B2C73F32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>App.MyMES</RootNamespace>
+    <AssemblyName>COSMOMES</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>\\192.168.1.248\d%24\MES_Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://192.168.1.248:888/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MESLogo_ICO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D3D6C4958F7D4252003544968EFFD6F6F766F002</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MES_Key.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\..\..\..\10-Test\皮肤例子\WinForDotNetBar\wind\wind\bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v19.2.UI, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.ExpressApp.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Persistent.Base.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Snap.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Snap.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Snap.v19.2.Extensions, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Tutorials.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.UI, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.Wizard, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Interop.BarTender, Version=11.0.7.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Interop.BarTender\11.0.7.1__109ff779a1b4cbc7\Interop.BarTender.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.LabelManager2, Version=19.0.0.0, Culture=neutral, PublicKeyToken=1904804c83c4f22a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\A01_Win_Dev_19.2.6_CodeSoft_2019\App.MyMES\bin\Debug\Interop.LabelManager2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Seagull.BarTender.Print, Version=11.0.7.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=AMD64" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\DataCommitService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesMaterialUnitService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PartSelectService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SimensService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBase.designer.cs">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBase2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBase2.designer.cs">
+      <DependentUpon>FrmBase2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBase3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBase3.designer.cs">
+      <DependentUpon>FrmBase3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly2.0\AssemblyTwoInputV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly2.0\AssemblyTwoInputV2_Form.Designer.cs">
+      <DependentUpon>AssemblyTwoInputV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly2.0\AssemblyV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly2.0\AssemblyV2_Form.designer.cs">
+      <DependentUpon>AssemblyV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly2.0\L2RollerAssemblyV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly2.0\L2RollerAssemblyV2_Form.Designer.cs">
+      <DependentUpon>L2RollerAssemblyV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly2.0\ToolingAssemblyV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly2.0\ToolingAssemblyV2_Form.Designer.cs">
+      <DependentUpon>ToolingAssemblyV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyAutoNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyAutoNew_Form.designer.cs">
+      <DependentUpon>AssemblyAutoNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyAutoNoPo_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyAutoNoPo_Form.Designer.cs">
+      <DependentUpon>AssemblyAutoNoPo_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyAutoPart_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyAutoPart_Form.Designer.cs">
+      <DependentUpon>AssemblyAutoPart_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyNoPoNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyNoPoNew_Form.designer.cs">
+      <DependentUpon>AssemblyNoPoNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyNoPo_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyNoPo_Form.Designer.cs">
+      <DependentUpon>AssemblyNoPo_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanleNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanleNew_Form.Designer.cs">
+      <DependentUpon>AssemblyPanleNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanleNoPoNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanleNoPoNew_Form.designer.cs">
+      <DependentUpon>AssemblyPanleNoPoNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanleNoPo_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanleNoPo_Form.designer.cs">
+      <DependentUpon>AssemblyPanleNoPo_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanlePartNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanlePartNew_Form.designer.cs">
+      <DependentUpon>AssemblyPanlePartNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanlePart_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanlePart_Form.designer.cs">
+      <DependentUpon>AssemblyPanlePart_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanle_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPanle_Form.Designer.cs">
+      <DependentUpon>AssemblyPanle_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPartNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPartNew_Form.designer.cs">
+      <DependentUpon>AssemblyPartNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPart_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyPart_Form.Designer.cs">
+      <DependentUpon>AssemblyPart_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyAuto_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyAuto_Form.Designer.cs">
+      <DependentUpon>AssemblyAuto_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\AssemblyNew_Form.Designer.cs">
+      <DependentUpon>AssemblyNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\Assembly_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\Assembly_Form.Designer.cs">
+      <DependentUpon>Assembly_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\L2RollerAssemblyNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\L2RollerAssemblyNew_Form.Designer.cs">
+      <DependentUpon>L2RollerAssemblyNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\L2RollerAssembly_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\L2RollerAssembly_Form.Designer.cs">
+      <DependentUpon>L2RollerAssembly_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\ToolingAssemblyNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\ToolingAssemblyNew_Form.Designer.cs">
+      <DependentUpon>ToolingAssemblyNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Assemly\ToolingAssembly_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Assemly\ToolingAssembly_Form.Designer.cs">
+      <DependentUpon>ToolingAssembly_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Link2.0\CarrierLinkMaterialBatchV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Link2.0\CarrierLinkMaterialBatchV2_Form.Designer.cs">
+      <DependentUpon>CarrierLinkMaterialBatchV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Link2.0\SNLinkBatchV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Link2.0\SNLinkBatchV2_Form.Designer.cs">
+      <DependentUpon>SNLinkBatchV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Link2.0\SNlinkUPCV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Link2.0\SNlinkUPCV2_Form.Designer.cs">
+      <DependentUpon>SNlinkUPCV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Link2.0\ToolingLinkToolingV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Link2.0\ToolingLinkToolingV2_Form.Designer.cs">
+      <DependentUpon>ToolingLinkToolingV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Link\CarrierLinkMaterialBatch_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Link\CarrierLinkMaterialBatch_Form.Designer.cs">
+      <DependentUpon>CarrierLinkMaterialBatch_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Link\SNLinkBatch_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Link\SNLinkBatch_Form.Designer.cs">
+      <DependentUpon>SNLinkBatch_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Link\SNlinkUPC_Auto_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Link\SNlinkUPC_Auto_Form.Designer.cs">
+      <DependentUpon>SNlinkUPC_Auto_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Link\SNlinkUPC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Link\SNlinkUPC_Form.Designer.cs">
+      <DependentUpon>SNlinkUPC_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Link\ToolingLinkTooling_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Link\ToolingLinkTooling_Form.designer.cs">
+      <DependentUpon>ToolingLinkTooling_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Material\MaterialCroppingDOE_SN_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Material\MaterialCroppingDOE_SN_Form.designer.cs">
+      <DependentUpon>MaterialCroppingDOE_SN_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Material\MaterialCropping_Batch_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Material\MaterialCropping_Batch_Form.designer.cs">
+      <DependentUpon>MaterialCropping_Batch_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Material\MaterialCropping_SN_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Material\MaterialCropping_SN_Form.designer.cs">
+      <DependentUpon>MaterialCropping_SN_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Material\MaterialInitial_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Material\MaterialInitial_Form.Designer.cs">
+      <DependentUpon>MaterialInitial_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Material\MaterialLineCropping_SN_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Material\MaterialLineCropping_SN_Form.Designer.cs">
+      <DependentUpon>MaterialLineCropping_SN_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ORT\ORTReplaceCode_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ORT\ORTReplaceCode_Form.Designer.cs">
+      <DependentUpon>ORTReplaceCode_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ORT\ORTReplaceSN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ORT\ORTReplaceSN.Designer.cs">
+      <DependentUpon>ORTReplaceSN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\ChangePart_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\ChangePart_Form.designer.cs">
+      <DependentUpon>ChangePart_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\ChangePart_Form_11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\ChangePart_Form_11.designer.cs">
+      <DependentUpon>ChangePart_Form_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\Disassembly_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\Disassembly_Form.Designer.cs">
+      <DependentUpon>Disassembly_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\ReleaseMachineSN_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\ReleaseMachineSN_Form.Designer.cs">
+      <DependentUpon>ReleaseMachineSN_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\ReworkV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\ReworkV2_Form.Designer.cs">
+      <DependentUpon>ReworkV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\RMAChange_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\RMAChange_Form.designer.cs">
+      <DependentUpon>RMAChange_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\ScanCheck_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\ScanCheck_Form.Designer.cs">
+      <DependentUpon>ScanCheck_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_Auto_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_Auto_Form.Designer.cs">
+      <DependentUpon>BoxPackage_Auto_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_Auto_Verify_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_Auto_Verify_Form.designer.cs">
+      <DependentUpon>BoxPackage_Auto_Verify_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_VerifyMax_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_VerifyMax_Form.designer.cs">
+      <DependentUpon>BoxPackage_VerifyMax_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_VerifyNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_VerifyNew_Form.designer.cs">
+      <DependentUpon>BoxPackage_VerifyNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_VerifyNew_RePrint_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_VerifyNew_RePrint_Form.Designer.cs">
+      <DependentUpon>BoxPackage_VerifyNew_RePrint_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_Verify_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_Verify_Form.designer.cs">
+      <DependentUpon>BoxPackage_Verify_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_Weight_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_Weight_Form.Designer.cs">
+      <DependentUpon>BoxPackage_Weight_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSNDOENew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSNDOENew_Form.designer.cs">
+      <DependentUpon>PrintSNDOENew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSNOfflineNPI_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSNOfflineNPI_Form.designer.cs">
+      <DependentUpon>PrintSNOfflineNPI_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSNOfflineSOV_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSNOfflineSOV_Form.designer.cs">
+      <DependentUpon>PrintSNOfflineSOV_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\RePrintFGSN_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\RePrintFGSN_Form.designer.cs">
+      <DependentUpon>RePrintFGSN_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\ScanFGSN_PrintUPC_Auto_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\ScanFGSN_PrintUPC_Auto_Form.Designer.cs">
+      <DependentUpon>ScanFGSN_PrintUPC_Auto_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\ScanUPC_PrintFGSN_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\ScanUPC_PrintFGSN_Form.Designer.cs">
+      <DependentUpon>ScanUPC_PrintFGSN_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC2.0\IQCV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC2.0\IQCV2_Form.Designer.cs">
+      <DependentUpon>IQCV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC2.0\JumpStationQCV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC2.0\JumpStationQCV2_Form.designer.cs">
+      <DependentUpon>JumpStationQCV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC2.0\KitQCV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC2.0\KitQCV2_Form.Designer.cs">
+      <DependentUpon>KitQCV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC2.0\OverStationV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC2.0\OverStationV2_Form.designer.cs">
+      <DependentUpon>OverStationV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC2.0\RepairKitQCV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC2.0\RepairKitQCV2_Form.Designer.cs">
+      <DependentUpon>RepairKitQCV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC2.0\QCV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC2.0\QCV2_Form.Designer.cs">
+      <DependentUpon>QCV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC2.0\Repair_QCV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC2.0\Repair_QCV2_Form.designer.cs">
+      <DependentUpon>Repair_QCV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC2.0\ToolingOverStationV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC2.0\ToolingOverStationV2_Form.Designer.cs">
+      <DependentUpon>ToolingOverStationV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\IQCNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\IQCNew_Form.Designer.cs">
+      <DependentUpon>IQCNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\KitQC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\KitQC_Form.designer.cs">
+      <DependentUpon>KitQC_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\OverStationNoPoNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\OverStationNoPoNew_Form.designer.cs">
+      <DependentUpon>OverStationNoPoNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\OverStationNoPo_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\OverStationNoPo_Form.designer.cs">
+      <DependentUpon>OverStationNoPo_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\OverStationPartNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\OverStationPartNew_Form.designer.cs">
+      <DependentUpon>OverStationPartNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\OverStationPart_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\OverStationPart_Form.designer.cs">
+      <DependentUpon>OverStationPart_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\OverStationNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\OverStationNew_Form.designer.cs">
+      <DependentUpon>OverStationNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\QCNoPoNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\QCNoPoNew_Form.Designer.cs">
+      <DependentUpon>QCNoPoNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\QCNoPo_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\QCNoPo_Form.Designer.cs">
+      <DependentUpon>QCNoPo_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\QCPartNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\QCPartNew_Form.Designer.cs">
+      <DependentUpon>QCPartNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\QCPart_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\QCPart_Form.Designer.cs">
+      <DependentUpon>QCPart_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\QCNew_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\QCNew_Form.Designer.cs">
+      <DependentUpon>QCNew_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Report\FGSNQueryShell_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Report\FGSNQueryShell_Form.Designer.cs">
+      <DependentUpon>FGSNQueryShell_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Report\QueryInactiveCode_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Report\QueryInactiveCode_Form.Designer.cs">
+      <DependentUpon>QueryInactiveCode_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ShipMent2.0\ReplaceBill_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ShipMent2.0\ReplaceBill_Form.Designer.cs">
+      <DependentUpon>ReplaceBill_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ShipMent2.0\ShipMentScales_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ShipMent2.0\ShipMentScales_Form.designer.cs">
+      <DependentUpon>ShipMentScales_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ShipMent2.0\ShipMentV2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ShipMent2.0\ShipMentV2_Form.Designer.cs">
+      <DependentUpon>ShipMentV2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ShipMent\ShipMentRemove_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ShipMent\ShipMentRemove_Form.Designer.cs">
+      <DependentUpon>ShipMentRemove_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TT\TT_OverStation_V2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TT\TT_OverStation_V2_Form.Designer.cs">
+      <DependentUpon>TT_OverStation_V2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TT\TT_Registers_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TT\TT_Registers_Form.Designer.cs">
+      <DependentUpon>TT_Registers_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\Interlock_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\Interlock_Form.Designer.cs">
+      <DependentUpon>Interlock_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\JumpStation_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\JumpStation_Frm.Designer.cs">
+      <DependentUpon>JumpStation_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\JumpStation_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\JumpStation_Form.Designer.cs">
+      <DependentUpon>JumpStation_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\Lamination_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\Lamination_Form.Designer.cs">
+      <DependentUpon>Lamination_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\ModUnitState_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\ModUnitState_Form.Designer.cs">
+      <DependentUpon>ModUnitState_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ORT\ORT_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ORT\ORT_Form.Designer.cs">
+      <DependentUpon>ORT_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\Plasma_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\Plasma_Form.Designer.cs">
+      <DependentUpon>Plasma_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\Rework_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\Rework_Form.Designer.cs">
+      <DependentUpon>Rework_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\SetSkin_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\SetSkin_Form.designer.cs">
+      <DependentUpon>SetSkin_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\SetStation_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\SetStation_Form.designer.cs">
+      <DependentUpon>SetStation_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luApplicationTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luDefectService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luEmployeeGroupService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luMachineFamilyService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luMachineFamilyTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luPartDetailDefService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luPartFamilyService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luPartFamilyTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luSerialNumberTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luUnitComponentTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luUnitStatusService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesEmployeeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesHistoryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesMachineService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesPackageService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesPartDetailService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesPartService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesProductionOrderService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesProductStructureService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesRouteDetailService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesRouteMachineMapService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesRouteMapService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesRouteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesSerialNumberOfLineService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesSerialNumberService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesStationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesStationTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesUnitComponentService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesUnitDefectService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesUnitDetailService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesUnitService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesUnitStateService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceHostingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\sysStatusService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\DefectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\DefectForm.Designer.cs">
+      <DependentUpon>DefectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Other\UnitReplaceTool_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Other\UnitReplaceTool_Form.Designer.cs">
+      <DependentUpon>UnitReplaceTool_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\BoxPackage_Form.Designer.cs">
+      <DependentUpon>BoxPackage_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\OOBA_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\OOBA_Form.Designer.cs">
+      <DependentUpon>OOBA_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\PackageOverStation_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\PackageOverStation_Form.designer.cs">
+      <DependentUpon>PackageOverStation_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\PackageRemove_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\PackageRemove_Form.Designer.cs">
+      <DependentUpon>PackageRemove_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Package\PalletPackage_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Package\PalletPackage_Form.Designer.cs">
+      <DependentUpon>PalletPackage_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Inactive\PrintSNForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Inactive\PrintSNForm.Designer.cs">
+      <DependentUpon>PrintSNForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSNOfflineDOE_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSNOfflineDOE_Form.designer.cs">
+      <DependentUpon>PrintSNOfflineDOE_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSNOffline_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSNOffline_Form.designer.cs">
+      <DependentUpon>PrintSNOffline_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSN_UPC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\PrintSN_UPC_Form.Designer.cs">
+      <DependentUpon>PrintSN_UPC_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\RePrintUPC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\RePrintUPC_Form.Designer.cs">
+      <DependentUpon>RePrintUPC_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\ScanFGSN_PrintUPC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\ScanFGSN_PrintUPC_Form.Designer.cs">
+      <DependentUpon>ScanFGSN_PrintUPC_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\ScanToolingPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\ScanToolingPrint.Designer.cs">
+      <DependentUpon>ScanToolingPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\ToolingQCNGPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\ToolingQCNGPrint.Designer.cs">
+      <DependentUpon>ToolingQCNGPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print\ToolingQCPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print\ToolingQCPrint.Designer.cs">
+      <DependentUpon>ToolingQCPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\IQC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\IQC_Form.Designer.cs">
+      <DependentUpon>IQC_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\OverStation_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\OverStation_Form.designer.cs">
+      <DependentUpon>OverStation_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\PhoneCaseIQC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\PhoneCaseIQC.Designer.cs">
+      <DependentUpon>PhoneCaseIQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\QC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\QC_Form.Designer.cs">
+      <DependentUpon>QC_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\JumpStationQC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\JumpStationQC_Form.designer.cs">
+      <DependentUpon>JumpStationQC_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\Repair_QC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\Repair_QC_Form.designer.cs">
+      <DependentUpon>Repair_QC_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QC\ToolingOverStation_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QC\ToolingOverStation_Form.Designer.cs">
+      <DependentUpon>ToolingOverStation_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ShipMent\ShipMentRePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ShipMent\ShipMentRePrint.Designer.cs">
+      <DependentUpon>ShipMentRePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ShipMent\ShipMent_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ShipMent\ShipMent_Form.Designer.cs">
+      <DependentUpon>ShipMent_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TT\TT_OverStation_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TT\TT_OverStation_Form.Designer.cs">
+      <DependentUpon>TT_OverStation_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TT\TT_BindBox_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TT\TT_BindBox_Form.designer.cs">
+      <DependentUpon>TT_BindBox_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH\P61_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>P61_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH\WH_ShipmentOut_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_WH\WH_ShipmentOut_Form.Designer.cs">
+      <DependentUpon>WH_ShipmentOut_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH\WH_Edit_Detail_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_WH\WH_Edit_Detail_Form.Designer.cs">
+      <DependentUpon>WH_Edit_Detail_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH\WH_Edit_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_WH\WH_Edit_Form.Designer.cs">
+      <DependentUpon>WH_Edit_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH\WH_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_WH\WH_Form.Designer.cs">
+      <DependentUpon>WH_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH\WH_In_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_WH\WH_In_Form.Designer.cs">
+      <DependentUpon>WH_In_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH_Old\Import_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_WH_Old\Import_Form.Designer.cs">
+      <DependentUpon>Import_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH_Old\WH_Edit_Detail_Old_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_WH_Old\WH_Edit_Detail_Old_Form.designer.cs">
+      <DependentUpon>WH_Edit_Detail_Old_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH_Old\WH_Edit_Old_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_WH_Old\WH_Edit_Old_Form.designer.cs">
+      <DependentUpon>WH_Edit_Old_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH_Old\WH_In_Old_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_WH_Old\WH_In_Old_Form.designer.cs">
+      <DependentUpon>WH_In_Old_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH_Old\WH_Old_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_WH_Old\WH_Old_Form.designer.cs">
+      <DependentUpon>WH_Old_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_WH_Old\WH_ShipmentOut_Old_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_WH_Old\WH_ShipmentOut_Old_Form.designer.cs">
+      <DependentUpon>WH_ShipmentOut_Old_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FtpWeb.cs" />
+    <Compile Include="Labels\MESLabel\Add.cs" />
+    <Compile Include="Labels\MESLabel\ApplyMap.cs" />
+    <Compile Include="Labels\MESLabel\Bool.cs" />
+    <Compile Include="Labels\MESLabel\Centry.cs" />
+    <Compile Include="Labels\MESLabel\Day.cs" />
+    <Compile Include="Labels\MESLabel\DayOfYear.cs" />
+    <Compile Include="Labels\MESLabel\DecToHex.cs" />
+    <Compile Include="Labels\MESLabel\DecToOct.cs" />
+    <Compile Include="Labels\MESLabel\Div.cs" />
+    <Compile Include="Labels\MESLabel\HexToDec.cs" />
+    <Compile Include="Labels\MESLabel\Hour12.cs" />
+    <Compile Include="Labels\MESLabel\Hour24.cs" />
+    <Compile Include="Labels\MESLabel\If.cs" />
+    <Compile Include="Labels\MESLabel\Left.cs" />
+    <Compile Include="Labels\MESLabel\Len.cs" />
+    <Compile Include="Labels\MESLabel\MESDBFTable.cs" />
+    <Compile Include="Labels\MESLabel\MESFuncObject.cs" />
+    <Compile Include="Labels\MESLabel\MESFuncObjFactory.cs" />
+    <Compile Include="Labels\MESLabel\MESLabel.cs" />
+    <Compile Include="Labels\MESLabel\MESLBLException.cs" />
+    <Compile Include="Labels\MESLabel\MESParser.cs" />
+    <Compile Include="Labels\MESLabel\MESScaner.cs" />
+    <Compile Include="Labels\MESLabel\Minute.cs" />
+    <Compile Include="Labels\MESLabel\Mod.cs" />
+    <Compile Include="Labels\MESLabel\Month.cs" />
+    <Compile Include="Labels\MESLabel\Multiply.cs" />
+    <Compile Include="Labels\MESLabel\OctToDec.cs" />
+    <Compile Include="Labels\MESLabel\PageCount.cs" />
+    <Compile Include="Labels\MESLabel\PageNumber.cs" />
+    <Compile Include="Labels\MESLabel\PrinterName.cs" />
+    <Compile Include="Labels\MESLabel\Right.cs" />
+    <Compile Include="Labels\MESLabel\SocketTCPClient.cs" />
+    <Compile Include="Labels\MESLabel\SourceFilePath.cs" />
+    <Compile Include="Labels\MESLabel\Subst.cs" />
+    <Compile Include="Labels\MESLabel\Substr.cs" />
+    <Compile Include="Labels\MESLabel\WeekOfYear.cs" />
+    <Compile Include="Labels\MESLabel\Year.cs" />
+    <Compile Include="Labels\MESLabel\YearOfManWeek.cs" />
+    <Compile Include="Labels\WdProtocolNet\LPSClient.cs" />
+    <Compile Include="Labels\WdProtocolNet\modByteFunctions.cs" />
+    <Compile Include="Labels\ZebraPrintHelper.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogNet.cs" />
+    <Compile Include="MessageInfo.cs" />
+    <Compile Include="MES_Dev_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MES_Dev_Form.Designer.cs">
+      <DependentUpon>MES_Dev_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MES_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MES_Form.Designer.cs">
+      <DependentUpon>MES_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MSGForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSGForm.Designer.cs">
+      <DependentUpon>MSGForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultiColumnComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyINI.cs" />
+    <Compile Include="Frm_Inactive\IQCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Inactive\IQCForm.Designer.cs">
+      <DependentUpon>IQCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Inactive\PO_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Inactive\PO_Form.Designer.cs">
+      <DependentUpon>PO_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public_.cs" />
+    <Compile Include="QCNG_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCNG_Form.Designer.cs">
+      <DependentUpon>QCNG_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\WH_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\WH_Report.Designer.cs">
+      <DependentUpon>WH_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\WH_Report_Old.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\WH_Report_Old.Designer.cs">
+      <DependentUpon>WH_Report_Old.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScanerHook.cs" />
+    <Compile Include="Frm_Report\Search_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Report\Search_Form.Designer.cs">
+      <DependentUpon>Search_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Report\Select_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Report\Select_Form.Designer.cs">
+      <DependentUpon>Select_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerClientFactory\DataCommitFactory.cs" />
+    <Compile Include="ServerClientFactory\IluApplicationTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\IluDefectFactory.cs" />
+    <Compile Include="ServerClientFactory\IluEmployeeGroupFactory.cs" />
+    <Compile Include="ServerClientFactory\IluMachineFamilyFactory.cs" />
+    <Compile Include="ServerClientFactory\IluMachineFamilyTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\IluPartDetailDefFactory.cs" />
+    <Compile Include="ServerClientFactory\IluPartFamilyFactory.cs" />
+    <Compile Include="ServerClientFactory\IluPartFamilyTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\IluSerialNumberTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\IluUnitComponentTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\IluUnitStatusFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesEmployeeFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesHistoryFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesMachineFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesMaterialUnitFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesPackageFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesPartDetailFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesPartFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesProductionOrderFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesProductStructureFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesRouteDetailFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesRouteFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesRouteMachineMapFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesRouteMapFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesSerialNumberFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesSerialNumberOfLineSVCFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesStationFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesStationTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesUnitComponentFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesUnitDefectFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesUnitDetailFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesUnitFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesUnitStateFactory.cs" />
+    <Compile Include="ServerClientFactory\IServiceHostingFactory.cs" />
+    <Compile Include="ServerClientFactory\IsysStatusFactory.cs" />
+    <Compile Include="ServerClientFactory\PartSelectFactory.cs" />
+    <Compile Include="Frm_Inactive\Tooling_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Inactive\Tooling_Form.Designer.cs">
+      <DependentUpon>Tooling_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerClientFactory\Siemens\ISiemensFactory.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Test_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Form.Designer.cs">
+      <DependentUpon>Test_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WcfInvokeFactory.cs" />
+    <Compile Include="WebP.cs" />
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBase.resx">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBase2.resx">
+      <DependentUpon>FrmBase2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBase3.resx">
+      <DependentUpon>FrmBase3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly2.0\AssemblyTwoInputV2_Form.resx">
+      <DependentUpon>AssemblyTwoInputV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly2.0\AssemblyV2_Form.resx">
+      <DependentUpon>AssemblyV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly2.0\L2RollerAssemblyV2_Form.resx">
+      <DependentUpon>L2RollerAssemblyV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly2.0\ToolingAssemblyV2_Form.resx">
+      <DependentUpon>ToolingAssemblyV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyAutoNew_Form.resx">
+      <DependentUpon>AssemblyAutoNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyAutoNoPo_Form.resx">
+      <DependentUpon>AssemblyAutoNoPo_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyAutoPart_Form.resx">
+      <DependentUpon>AssemblyAutoPart_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyNoPoNew_Form.resx">
+      <DependentUpon>AssemblyNoPoNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyNoPo_Form.resx">
+      <DependentUpon>AssemblyNoPo_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyPanleNew_Form.resx">
+      <DependentUpon>AssemblyPanleNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyPanleNoPoNew_Form.resx">
+      <DependentUpon>AssemblyPanleNoPoNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyPanleNoPo_Form.resx">
+      <DependentUpon>AssemblyPanleNoPo_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyPanlePartNew_Form.resx">
+      <DependentUpon>AssemblyPanlePartNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyPanlePart_Form.resx">
+      <DependentUpon>AssemblyPanlePart_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyPanle_Form.resx">
+      <DependentUpon>AssemblyPanle_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyPartNew_Form.resx">
+      <DependentUpon>AssemblyPartNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyPart_Form.resx">
+      <DependentUpon>AssemblyPart_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyAuto_Form.resx">
+      <DependentUpon>AssemblyAuto_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\AssemblyNew_Form.resx">
+      <DependentUpon>AssemblyNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\Assembly_Form.resx">
+      <DependentUpon>Assembly_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\L2RollerAssemblyNew_Form.resx">
+      <DependentUpon>L2RollerAssemblyNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\L2RollerAssembly_Form.resx">
+      <DependentUpon>L2RollerAssembly_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\ToolingAssemblyNew_Form.resx">
+      <DependentUpon>ToolingAssemblyNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Assemly\ToolingAssembly_Form.resx">
+      <DependentUpon>ToolingAssembly_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Link2.0\CarrierLinkMaterialBatchV2_Form.resx">
+      <DependentUpon>CarrierLinkMaterialBatchV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Link2.0\SNLinkBatchV2_Form.resx">
+      <DependentUpon>SNLinkBatchV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Link2.0\SNlinkUPCV2_Form.resx">
+      <DependentUpon>SNlinkUPCV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Link2.0\ToolingLinkToolingV2_Form.resx">
+      <DependentUpon>ToolingLinkToolingV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Link\CarrierLinkMaterialBatch_Form.resx">
+      <DependentUpon>CarrierLinkMaterialBatch_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Link\SNLinkBatch_Form.resx">
+      <DependentUpon>SNLinkBatch_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Link\SNlinkUPC_Auto_Form.resx">
+      <DependentUpon>SNlinkUPC_Auto_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Link\SNlinkUPC_Form.resx">
+      <DependentUpon>SNlinkUPC_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Link\ToolingLinkTooling_Form.resx">
+      <DependentUpon>ToolingLinkTooling_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Material\MaterialCroppingDOE_SN_Form.resx">
+      <DependentUpon>MaterialCroppingDOE_SN_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Material\MaterialCropping_Batch_Form.resx">
+      <DependentUpon>MaterialCropping_Batch_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Material\MaterialCropping_SN_Form.resx">
+      <DependentUpon>MaterialCropping_SN_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Material\MaterialInitial_Form.resx">
+      <DependentUpon>MaterialInitial_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Material\MaterialLineCropping_SN_Form.resx">
+      <DependentUpon>MaterialLineCropping_SN_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ORT\ORTReplaceCode_Form.resx">
+      <DependentUpon>ORTReplaceCode_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ORT\ORTReplaceSN.resx">
+      <DependentUpon>ORTReplaceSN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\ChangePart_Form.resx">
+      <DependentUpon>ChangePart_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\ChangePart_Form_11.resx">
+      <DependentUpon>ChangePart_Form_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\Disassembly_Form.resx">
+      <DependentUpon>Disassembly_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\ReleaseMachineSN_Form.resx">
+      <DependentUpon>ReleaseMachineSN_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\ReworkV2_Form.resx">
+      <DependentUpon>ReworkV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\RMAChange_Form.resx">
+      <DependentUpon>RMAChange_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\ScanCheck_Form.resx">
+      <DependentUpon>ScanCheck_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\BoxPackage_Auto_Form.resx">
+      <DependentUpon>BoxPackage_Auto_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\BoxPackage_Auto_Verify_Form.resx">
+      <DependentUpon>BoxPackage_Auto_Verify_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\BoxPackage_VerifyMax_Form.resx">
+      <DependentUpon>BoxPackage_VerifyMax_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\BoxPackage_VerifyNew_Form.resx">
+      <DependentUpon>BoxPackage_VerifyNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\BoxPackage_VerifyNew_RePrint_Form.resx">
+      <DependentUpon>BoxPackage_VerifyNew_RePrint_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\BoxPackage_Verify_Form.resx">
+      <DependentUpon>BoxPackage_Verify_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\BoxPackage_Weight_Form.resx">
+      <DependentUpon>BoxPackage_Weight_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\PrintSNDOENew_Form.resx">
+      <DependentUpon>PrintSNDOENew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\PrintSNOfflineNPI_Form.resx">
+      <DependentUpon>PrintSNOfflineNPI_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\PrintSNOfflineSOV_Form.resx">
+      <DependentUpon>PrintSNOfflineSOV_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\RePrintFGSN_Form.resx">
+      <DependentUpon>RePrintFGSN_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\ScanFGSN_PrintUPC_Auto_Form.resx">
+      <DependentUpon>ScanFGSN_PrintUPC_Auto_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\ScanUPC_PrintFGSN_Form.resx">
+      <DependentUpon>ScanUPC_PrintFGSN_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC2.0\IQCV2_Form.resx">
+      <DependentUpon>IQCV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC2.0\JumpStationQCV2_Form.resx">
+      <DependentUpon>JumpStationQCV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC2.0\KitQCV2_Form.resx">
+      <DependentUpon>KitQCV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC2.0\OverStationV2_Form.resx">
+      <DependentUpon>OverStationV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC2.0\RepairKitQCV2_Form.resx">
+      <DependentUpon>RepairKitQCV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC2.0\QCV2_Form.resx">
+      <DependentUpon>QCV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC2.0\Repair_QCV2_Form.resx">
+      <DependentUpon>Repair_QCV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC2.0\ToolingOverStationV2_Form.resx">
+      <DependentUpon>ToolingOverStationV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\IQCNew_Form.resx">
+      <DependentUpon>IQCNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\KitQC_Form.resx">
+      <DependentUpon>KitQC_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\OverStationNoPoNew_Form.resx">
+      <DependentUpon>OverStationNoPoNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\OverStationNoPo_Form.resx">
+      <DependentUpon>OverStationNoPo_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\OverStationPartNew_Form.resx">
+      <DependentUpon>OverStationPartNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\OverStationPart_Form.resx">
+      <DependentUpon>OverStationPart_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\OverStationNew_Form.resx">
+      <DependentUpon>OverStationNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\QCNoPoNew_Form.resx">
+      <DependentUpon>QCNoPoNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\QCNoPo_Form.resx">
+      <DependentUpon>QCNoPo_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\QCPartNew_Form.resx">
+      <DependentUpon>QCPartNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\QCPart_Form.resx">
+      <DependentUpon>QCPart_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\QCNew_Form.resx">
+      <DependentUpon>QCNew_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Report\FGSNQueryShell_Form.resx">
+      <DependentUpon>FGSNQueryShell_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Report\QueryInactiveCode_Form.resx">
+      <DependentUpon>QueryInactiveCode_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ShipMent2.0\ReplaceBill_Form.resx">
+      <DependentUpon>ReplaceBill_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ShipMent2.0\ShipMentScales_Form.resx">
+      <DependentUpon>ShipMentScales_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ShipMent2.0\ShipMentV2_Form.resx">
+      <DependentUpon>ShipMentV2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ShipMent\ShipMentRemove_Form.resx">
+      <DependentUpon>ShipMentRemove_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TT\TT_OverStation_V2_Form.resx">
+      <DependentUpon>TT_OverStation_V2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TT\TT_Registers_Form.resx">
+      <DependentUpon>TT_Registers_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\Interlock_Form.resx">
+      <DependentUpon>Interlock_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\JumpStation_Form.resx">
+      <DependentUpon>JumpStation_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\JumpStation_Frm.resx">
+      <DependentUpon>JumpStation_Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\Lamination_Form.resx">
+      <DependentUpon>Lamination_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\ModUnitState_Form.resx">
+      <DependentUpon>ModUnitState_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ORT\ORT_Form.resx">
+      <DependentUpon>ORT_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\Plasma_Form.resx">
+      <DependentUpon>Plasma_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\Rework_Form.resx">
+      <DependentUpon>Rework_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\SetSkin_Form.resx">
+      <DependentUpon>SetSkin_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\SetStation_Form.resx">
+      <DependentUpon>SetStation_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\UnitReplaceTool_Form.resx">
+      <DependentUpon>UnitReplaceTool_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\BoxPackage_Form.resx">
+      <DependentUpon>BoxPackage_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\OOBA_Form.resx">
+      <DependentUpon>OOBA_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\PackageOverStation_Form.resx">
+      <DependentUpon>PackageOverStation_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\PackageRemove_Form.resx">
+      <DependentUpon>PackageRemove_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Package\PalletPackage_Form.resx">
+      <DependentUpon>PalletPackage_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Inactive\PrintSNForm.resx">
+      <DependentUpon>PrintSNForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\PrintSNOfflineDOE_Form.resx">
+      <DependentUpon>PrintSNOfflineDOE_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\PrintSNOffline_Form.resx">
+      <DependentUpon>PrintSNOffline_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\PrintSN_UPC_Form.resx">
+      <DependentUpon>PrintSN_UPC_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\RePrintUPC_Form.resx">
+      <DependentUpon>RePrintUPC_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\ScanFGSN_PrintUPC_Form.resx">
+      <DependentUpon>ScanFGSN_PrintUPC_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\ScanToolingPrint.resx">
+      <DependentUpon>ScanToolingPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\ToolingQCNGPrint.resx">
+      <DependentUpon>ToolingQCNGPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print\ToolingQCPrint.resx">
+      <DependentUpon>ToolingQCPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\IQC_Form.resx">
+      <DependentUpon>IQC_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\OverStation_Form.resx">
+      <DependentUpon>OverStation_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\PhoneCaseIQC.resx">
+      <DependentUpon>PhoneCaseIQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\QC_Form.resx">
+      <DependentUpon>QC_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\JumpStationQC_Form.resx">
+      <DependentUpon>JumpStationQC_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\Repair_QC_Form.resx">
+      <DependentUpon>Repair_QC_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QC\ToolingOverStation_Form.resx">
+      <DependentUpon>ToolingOverStation_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ShipMent\ShipMentRePrint.resx">
+      <DependentUpon>ShipMentRePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ShipMent\ShipMent_Form.resx">
+      <DependentUpon>ShipMent_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TT\TT_OverStation_Form.resx">
+      <DependentUpon>TT_OverStation_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TT\TT_BindBox_Form.resx">
+      <DependentUpon>TT_BindBox_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_WH\WH_ShipmentOut_Form.resx">
+      <DependentUpon>WH_ShipmentOut_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_WH\WH_Edit_Detail_Form.resx">
+      <DependentUpon>WH_Edit_Detail_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_WH\WH_Edit_Form.resx">
+      <DependentUpon>WH_Edit_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_WH\WH_Form.resx">
+      <DependentUpon>WH_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_WH\WH_In_Form.resx">
+      <DependentUpon>WH_In_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_WH_Old\Import_Form.resx">
+      <DependentUpon>Import_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_WH_Old\WH_Edit_Detail_Old_Form.resx">
+      <DependentUpon>WH_Edit_Detail_Old_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_WH_Old\WH_Edit_Old_Form.resx">
+      <DependentUpon>WH_Edit_Old_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_WH_Old\WH_In_Old_Form.resx">
+      <DependentUpon>WH_In_Old_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_WH_Old\WH_Old_Form.resx">
+      <DependentUpon>WH_Old_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_WH_Old\WH_ShipmentOut_Old_Form.resx">
+      <DependentUpon>WH_ShipmentOut_Old_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Other\DefectForm.resx">
+      <DependentUpon>DefectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MES_Dev_Form.resx">
+      <DependentUpon>MES_Dev_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MES_Form.resx">
+      <DependentUpon>MES_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Inactive\IQCForm.resx">
+      <DependentUpon>IQCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Inactive\PO_Form.resx">
+      <DependentUpon>PO_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSGForm.resx">
+      <DependentUpon>MSGForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Frm_Report\Search_Form.resx">
+      <DependentUpon>Search_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Report\Select_Form.resx">
+      <DependentUpon>Select_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Inactive\Tooling_Form.resx">
+      <DependentUpon>Tooling_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCNG_Form.resx">
+      <DependentUpon>QCNG_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\WH_Report.resx">
+      <DependentUpon>WH_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\WH_Report_Old.resx">
+      <DependentUpon>WH_Report_Old.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Form.resx">
+      <DependentUpon>Test_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\DataCommitService\DataCommit.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DataCommitService\DataCommit1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DataCommitService\DataCommit2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DataCommitService\DataCommit3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DataCommitService\DataCommit4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DataCommitService\DataCommitSVC.wsdl" />
+    <None Include="Connected Services\luApplicationTypeService\luApplicationType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luApplicationTypeService\luApplicationType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luApplicationTypeService\luApplicationType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luApplicationTypeService\luApplicationTypeSVC.wsdl" />
+    <None Include="Connected Services\luDefectService\luDefect.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luDefectService\luDefect1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luDefectService\luDefect2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luDefectService\luDefectSVC.wsdl" />
+    <None Include="Connected Services\luEmployeeGroupService\luEmployeeGroup.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luEmployeeGroupService\luEmployeeGroup1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luEmployeeGroupService\luEmployeeGroup2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luEmployeeGroupService\luEmployeeGroupSVC.wsdl" />
+    <None Include="Connected Services\luMachineFamilyService\luMachineFamily.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyService\luMachineFamily1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyService\luMachineFamily2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyService\luMachineFamilySVC.wsdl" />
+    <None Include="Connected Services\luMachineFamilyTypeService\luMachineFamilyType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyTypeService\luMachineFamilyType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyTypeService\luMachineFamilyType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyTypeService\luMachineFamilyTypeSVC.wsdl" />
+    <None Include="Connected Services\luPartDetailDefService\luPartDetailDef.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartDetailDefService\luPartDetailDef1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartDetailDefService\luPartDetailDef2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartDetailDefService\luPartDetailDefSVC.wsdl" />
+    <None Include="Connected Services\luPartFamilyService\luPartFamily.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyService\luPartFamily1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyService\luPartFamily2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyService\luPartFamilySVC.wsdl" />
+    <None Include="Connected Services\luPartFamilyTypeService\luPartFamilyType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyTypeService\luPartFamilyType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyTypeService\luPartFamilyType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyTypeService\luPartFamilyTypeSVC.wsdl" />
+    <None Include="Connected Services\luSerialNumberTypeService\luSerialNumberType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luSerialNumberTypeService\luSerialNumberType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luSerialNumberTypeService\luSerialNumberType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luSerialNumberTypeService\luSerialNumberTypeSVC.wsdl" />
+    <None Include="Connected Services\luUnitComponentTypeService\luUnitComponentType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitComponentTypeService\luUnitComponentType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitComponentTypeService\luUnitComponentType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitComponentTypeService\luUnitComponentTypeSVC.wsdl" />
+    <None Include="Connected Services\luUnitStatusService\luUnitStatus.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitStatusService\luUnitStatus1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitStatusService\luUnitStatus2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitStatusService\luUnitStatusSVC.wsdl" />
+    <None Include="Connected Services\mesEmployeeService\mesEmployee.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesEmployeeService\mesEmployee1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesEmployeeService\mesEmployee2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesEmployeeService\mesEmployeeSVC.wsdl" />
+    <None Include="Connected Services\mesHistoryService\mesHistory.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesHistoryService\mesHistory1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesHistoryService\mesHistory2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesHistoryService\mesHistorySVC.wsdl" />
+    <None Include="Connected Services\mesMachineService\mesMachine.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMachineService\mesMachine1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMachineService\mesMachine2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMachineService\mesMachine3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMachineService\mesMachineSVC.wsdl" />
+    <None Include="Connected Services\mesMaterialUnitService\mesMaterialUnit.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMaterialUnitService\mesMaterialUnit1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMaterialUnitService\mesMaterialUnit2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMaterialUnitService\mesMaterialUnit3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMaterialUnitService\mesMaterialUnitSVC.wsdl" />
+    <None Include="Connected Services\mesPackageService\mesPackage.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPackageService\mesPackage1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPackageService\mesPackage2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPackageService\mesPackageSVC.wsdl" />
+    <None Include="Connected Services\mesPartDetailService\mesPartDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartDetailService\mesPartDetail1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartDetailService\mesPartDetail2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartDetailService\mesPartDetailSVC.wsdl" />
+    <None Include="Connected Services\mesPartService\mesPart.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartService\mesPart1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartService\mesPart2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartService\mesPartSVC.wsdl" />
+    <None Include="Connected Services\mesProductionOrderService\mesProductionOrder.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductionOrderService\mesProductionOrder1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductionOrderService\mesProductionOrder2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductionOrderService\mesProductionOrderSVC.wsdl" />
+    <None Include="Connected Services\mesProductStructureService\mesProductStructure.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductStructureService\mesProductStructure1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductStructureService\mesProductStructure2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductStructureService\mesProductStructure3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductStructureService\mesProductStructureSVC.wsdl" />
+    <None Include="Connected Services\mesRouteDetailService\mesRouteDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteDetailService\mesRouteDetail1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteDetailService\mesRouteDetail2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteDetailService\mesRouteDetail3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteDetailService\mesRouteDetailSVC.wsdl" />
+    <None Include="Connected Services\mesRouteMachineMapService\mesRouteMachineMap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMachineMapService\mesRouteMachineMap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMachineMapService\mesRouteMachineMap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMachineMapService\mesRouteMachineMapSVC.wsdl" />
+    <None Include="Connected Services\mesRouteMapService\mesRouteMap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMapService\mesRouteMap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMapService\mesRouteMap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMapService\mesRouteMap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMapService\mesRouteMapSVC.wsdl" />
+    <None Include="Connected Services\mesRouteService\mesRoute.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteService\mesRoute1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteService\mesRoute2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteService\mesRouteSVC.wsdl" />
+    <None Include="Connected Services\mesSerialNumberOfLineService\mesSerialNumberOfLineSVC.wsdl" />
+    <None Include="Connected Services\mesSerialNumberOfLineService\mesSerialNumberOfLineSVC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberOfLineService\mesSerialNumberOfLineSVC1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberOfLineService\mesSerialNumberOfLineSVC2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberService\mesSerialNumber.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberService\mesSerialNumber1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberService\mesSerialNumber2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberService\mesSerialNumberSVC.wsdl" />
+    <None Include="Connected Services\mesStationService\mesStation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationService\mesStation1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationService\mesStation2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationService\mesStationSVC.wsdl" />
+    <None Include="Connected Services\mesStationTypeService\mesStationType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationTypeService\mesStationType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationTypeService\mesStationType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationTypeService\mesStationTypeSVC.wsdl" />
+    <None Include="Connected Services\mesUnitComponentService\mesUnitComponent.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitComponentService\mesUnitComponent1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitComponentService\mesUnitComponent2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitComponentService\mesUnitComponentSVC.wsdl" />
+    <None Include="Connected Services\mesUnitDefectService\mesUnitDefect.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDefectService\mesUnitDefect1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDefectService\mesUnitDefect2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDefectService\mesUnitDefectSVC.wsdl" />
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetail1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetail2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetail3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetailSVC.wsdl" />
+    <None Include="Connected Services\mesUnitService\mesUnit.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitService\mesUnit1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitService\mesUnit2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitService\mesUnitSVC.wsdl" />
+    <None Include="Connected Services\mesUnitStateService\mesUnitState.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitStateService\mesUnitState1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitStateService\mesUnitState2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitStateService\mesUnitStateSVC.wsdl" />
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.BoxSnToBatchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.GetMesPartAndPartFamilyDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.GetMesStationAndStationTypeDetailResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.GetRouteCheck_DiagramResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.Get_CreateMaterailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.Get_CreateMesSNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.Get_CreateMesSN_NewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.Get_CreatePackageSNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.Get_CreatePackageSN_SiemensResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.Get_SearchDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.Get_SN_ShellResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.uspCallProcedureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.uspPalletPackagingV2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC.wsdl" />
+    <None Include="Connected Services\PartSelectService\PartSelectSVC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceHostingService\ServiceHosting.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceHostingService\ServiceHosting1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceHostingService\ServiceHostingSVC.wsdl" />
+    <None Include="Connected Services\SimensService\App.MyMES.SimensService.CheckBillNoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SimensService\Siemens.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SimensService\Siemens1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SimensService\Siemens2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SimensService\SiemensSVC.wsdl" />
+    <None Include="Connected Services\sysStatusService\sysStatus.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\sysStatusService\sysStatus1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\sysStatusService\sysStatus2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\sysStatusService\sysStatusSVC.wsdl" />
+    <None Include="Frm_WH\P61_DataSet.xsc">
+      <DependentUpon>P61_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Frm_WH\P61_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>P61_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Frm_WH\P61_DataSet.xss">
+      <DependentUpon>P61_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MES_Key.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\App.Model.luApplicationType.datasource" />
+    <None Include="Properties\DataSources\App.Model.luDefect.datasource" />
+    <None Include="Properties\DataSources\App.Model.luEmployeeGroup.datasource" />
+    <None Include="Properties\DataSources\App.Model.luMachineFamily.datasource" />
+    <None Include="Properties\DataSources\App.Model.luMachineFamilyType.datasource" />
+    <None Include="Properties\DataSources\App.Model.luPartDetailDef.datasource" />
+    <None Include="Properties\DataSources\App.Model.luPartFamily.datasource" />
+    <None Include="Properties\DataSources\App.Model.luPartFamilyType.datasource" />
+    <None Include="Properties\DataSources\App.Model.luSerialNumberType.datasource" />
+    <None Include="Properties\DataSources\App.Model.luUnitComponentType.datasource" />
+    <None Include="Properties\DataSources\App.Model.luUnitStatus.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesEmployee.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesHistory.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesMachine.datasource" />
+    <None Include="Properties\DataSources\App.Model.MesMaterialUnit.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesPackage.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesPart.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesPartDetail.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesProductionOrder.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesProductStructure.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesRoute.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesRouteDetail.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesRouteMachineMap.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesRouteMap.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesScreenshot.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesSerialNumber.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesSerialNumberOfLine.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesStation.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesStationType.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesUnit.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesUnitComponent.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesUnitDefect.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesUnitDetail.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesUnitState.datasource" />
+    <None Include="Properties\DataSources\App.Model.sysStatus.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\DataCommitService\" />
+    <WCFMetadataStorage Include="Connected Services\luApplicationTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\luDefectService\" />
+    <WCFMetadataStorage Include="Connected Services\luEmployeeGroupService\" />
+    <WCFMetadataStorage Include="Connected Services\luMachineFamilyService\" />
+    <WCFMetadataStorage Include="Connected Services\luMachineFamilyTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\luPartDetailDefService\" />
+    <WCFMetadataStorage Include="Connected Services\luPartFamilyService\" />
+    <WCFMetadataStorage Include="Connected Services\luPartFamilyTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\luSerialNumberTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\luUnitComponentTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\luUnitStatusService\" />
+    <WCFMetadataStorage Include="Connected Services\mesEmployeeService\" />
+    <WCFMetadataStorage Include="Connected Services\mesHistoryService\" />
+    <WCFMetadataStorage Include="Connected Services\mesMachineService\" />
+    <WCFMetadataStorage Include="Connected Services\mesMaterialUnitService\" />
+    <WCFMetadataStorage Include="Connected Services\mesPackageService\" />
+    <WCFMetadataStorage Include="Connected Services\mesPartDetailService\" />
+    <WCFMetadataStorage Include="Connected Services\mesPartService\" />
+    <WCFMetadataStorage Include="Connected Services\mesProductionOrderService\" />
+    <WCFMetadataStorage Include="Connected Services\mesProductStructureService\" />
+    <WCFMetadataStorage Include="Connected Services\mesRouteDetailService\" />
+    <WCFMetadataStorage Include="Connected Services\mesRouteMachineMapService\" />
+    <WCFMetadataStorage Include="Connected Services\mesRouteMapService\" />
+    <WCFMetadataStorage Include="Connected Services\mesRouteService\" />
+    <WCFMetadataStorage Include="Connected Services\mesSerialNumberOfLineService\" />
+    <WCFMetadataStorage Include="Connected Services\mesSerialNumberService\" />
+    <WCFMetadataStorage Include="Connected Services\mesStationService\" />
+    <WCFMetadataStorage Include="Connected Services\mesStationTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\mesUnitComponentService\" />
+    <WCFMetadataStorage Include="Connected Services\mesUnitDefectService\" />
+    <WCFMetadataStorage Include="Connected Services\mesUnitDetailService\" />
+    <WCFMetadataStorage Include="Connected Services\mesUnitService\" />
+    <WCFMetadataStorage Include="Connected Services\mesUnitStateService\" />
+    <WCFMetadataStorage Include="Connected Services\PartSelectService\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceHostingService\" />
+    <WCFMetadataStorage Include="Connected Services\SimensService\" />
+    <WCFMetadataStorage Include="Connected Services\sysStatusService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luApplicationTypeService\luApplicationType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luApplicationTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luApplicationTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luApplicationTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luEmployeeGroupService\luEmployeeGroup.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luEmployeeGroupService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luEmployeeGroupService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luEmployeeGroupService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyService\luMachineFamily.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyTypeService\luMachineFamilyType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartDetailDefService\luPartDetailDef.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartDetailDefService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartDetailDefService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartDetailDefService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyService\luPartFamily.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyTypeService\luPartFamilyType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luSerialNumberTypeService\luSerialNumberType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luSerialNumberTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luSerialNumberTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luSerialNumberTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitComponentTypeService\luUnitComponentType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitComponentTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitComponentTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitComponentTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitStatusService\luUnitStatus.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitStatusService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitStatusService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitStatusService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesEmployeeService\mesEmployee.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesEmployeeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesEmployeeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesEmployeeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesHistoryService\mesHistory.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesHistoryService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesHistoryService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesHistoryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesMachineService\mesMachine.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesMachineService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesMachineService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesMachineService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartService\mesPart.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartDetailService\mesPartDetail.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartDetailService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartDetailService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartDetailService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductionOrderService\mesProductionOrder.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductionOrderService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductionOrderService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductionOrderService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductStructureService\mesProductStructure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductStructureService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductStructureService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductStructureService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteService\mesRoute.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteDetailService\mesRouteDetail.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteDetailService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteDetailService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteDetailService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMachineMapService\mesRouteMachineMap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMachineMapService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMachineMapService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMachineMapService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMapService\mesRouteMap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMapService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMapService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMapService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberService\mesSerialNumber.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationService\mesStation.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationTypeService\mesStationType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitService\mesUnit.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitComponentService\mesUnitComponent.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitComponentService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitComponentService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitComponentService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitStateService\mesUnitState.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitStateService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitStateService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitStateService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sysStatusService\sysStatus.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sysStatusService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sysStatusService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sysStatusService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\270.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberOfLineService\mesSerialNumberOfLineSVC.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberOfLineService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberOfLineService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberOfLineService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC.disco" />
+    <None Include="Connected Services\PartSelectService\configuration91.svcinfo" />
+    <None Include="Connected Services\PartSelectService\configuration.svcinfo" />
+    <None Include="Connected Services\PartSelectService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SimensService\Siemens.disco" />
+    <None Include="Connected Services\SimensService\configuration91.svcinfo" />
+    <None Include="Connected Services\SimensService\configuration.svcinfo" />
+    <None Include="Connected Services\SimensService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\DataCommitService\DataCommit.disco" />
+    <None Include="Connected Services\DataCommitService\configuration91.svcinfo" />
+    <None Include="Connected Services\DataCommitService\configuration.svcinfo" />
+    <None Include="Connected Services\DataCommitService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\xxx.PNG" />
+    <Content Include="Sounds\QCNG.wav" />
+    <Content Include="Sounds\RE.wav" />
+    <Content Include="Sounds\SCRAP.wav" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Connected Services\mesUnitDefectService\mesUnitDefect.disco" />
+    <None Include="Connected Services\mesUnitDefectService\configuration91.svcinfo" />
+    <None Include="Connected Services\mesUnitDefectService\configuration.svcinfo" />
+    <None Include="Connected Services\mesUnitDefectService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\luDefectService\luDefect.disco" />
+    <None Include="Connected Services\luDefectService\configuration91.svcinfo" />
+    <None Include="Connected Services\luDefectService\configuration.svcinfo" />
+    <None Include="Connected Services\luDefectService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetail.disco" />
+    <None Include="Connected Services\mesUnitDetailService\configuration91.svcinfo" />
+    <None Include="Connected Services\mesUnitDetailService\configuration.svcinfo" />
+    <None Include="Connected Services\mesUnitDetailService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceHostingService\ServiceHosting.disco" />
+    <None Include="Connected Services\ServiceHostingService\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceHostingService\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceHostingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\mesPackageService\mesPackage.disco" />
+    <None Include="Connected Services\mesPackageService\configuration91.svcinfo" />
+    <None Include="Connected Services\mesPackageService\configuration.svcinfo" />
+    <None Include="Connected Services\mesPackageService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="bin\Debug\Sounds\NG.wav" />
+    <None Include="bin\Debug\Sounds\OK.wav" />
+    <None Include="Connected Services\mesMaterialUnitService\mesMaterialUnit.disco" />
+    <None Include="Connected Services\mesMaterialUnitService\configuration91.svcinfo" />
+    <None Include="Connected Services\mesMaterialUnitService\configuration.svcinfo" />
+    <None Include="Connected Services\mesMaterialUnitService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="COSMO400.ico" />
+    <None Include="Resources\COSMO.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\Logo_Per.png" />
+    <None Include="Resources\Cosmo_logo2.png" />
+    <None Include="Resources\Cosmo_logo.png" />
+    <None Include="Resources\COSMO_Black.png" />
+    <Content Include="MESLogo_ICO.ico" />
+    <None Include="Resources\MESLogo.png" />
+    <None Include="Resources\MESLogo_ICO.png" />
+    <None Include="Resources\Cosmo_logo1.png" />
+    <None Include="Resources\Cosmo_logo21.png" />
+    <Content Include="Sounds\NG.wav" />
+    <Content Include="Sounds\OK.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Model\App.Model.csproj">
+      <Project>{ca5c3bfc-f857-4c08-9793-a14dcd99fbd9}</Project>
+      <Name>App.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GZipEncoder\GZipEncoder.csproj">
+      <Project>{3eb736c4-62ea-4887-b040-948b13ef29b9}</Project>
+      <Name>GZipEncoder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecurityWcf.Core\SecurityWcf.Core.csproj">
+      <Project>{df6d3938-6866-41e1-b1c9-fdb39da8e045}</Project>
+      <Name>SecurityWcf.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

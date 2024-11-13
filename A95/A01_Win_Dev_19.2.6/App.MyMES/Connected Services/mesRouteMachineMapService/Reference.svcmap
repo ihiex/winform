@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="34ed196c-6aa1-4611-8bad-3c9c8f499ae9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesRouteMachineMap.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesRouteMachineMap.xsd" MetadataType="Schema" ID="4a65803a-17fe-4f9d-8112-ea560641b6ec" SourceId="1" SourceUrl="http://localhost:55368/mesRouteMachineMap.svc?xsd=xsd1" />
+    <MetadataFile FileName="mesRouteMachineMap1.xsd" MetadataType="Schema" ID="991ceb47-115b-4e70-a07b-5dfa8c1ee7d3" SourceId="1" SourceUrl="http://localhost:55368/mesRouteMachineMap.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesRouteMachineMap2.xsd" MetadataType="Schema" ID="4f2c9c2f-ce0a-41be-aeca-6b51eb07b8c6" SourceId="1" SourceUrl="http://localhost:55368/mesRouteMachineMap.svc?xsd=xsd2" />
+    <MetadataFile FileName="mesRouteMachineMapSVC.wsdl" MetadataType="Wsdl" ID="14ede755-8879-45f7-b183-13c25a5eb1c5" SourceId="1" SourceUrl="http://localhost:55368/mesRouteMachineMap.svc?wsdl" />
+    <MetadataFile FileName="mesRouteMachineMap.disco" MetadataType="Disco" ID="a5aad647-df29-4f28-b4b2-adbe4f531a3a" SourceId="1" SourceUrl="http://localhost:55368/mesRouteMachineMap.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

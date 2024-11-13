@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="698ef350-c65c-4fe1-bdee-e06e12a21f41" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/luMachineFamily.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="luMachineFamily.xsd" MetadataType="Schema" ID="94896b2c-787c-4527-b1fa-efb0e9b1471b" SourceId="1" SourceUrl="http://localhost:55368/luMachineFamily.svc?xsd=xsd1" />
+    <MetadataFile FileName="luMachineFamily.disco" MetadataType="Disco" ID="73ddd9d7-bdc7-4108-9292-600d2c8f054c" SourceId="1" SourceUrl="http://localhost:55368/luMachineFamily.svc?disco" />
+    <MetadataFile FileName="luMachineFamily1.xsd" MetadataType="Schema" ID="12734e44-03af-45f5-b8bf-80d1d13ed643" SourceId="1" SourceUrl="http://localhost:55368/luMachineFamily.svc?xsd=xsd0" />
+    <MetadataFile FileName="luMachineFamilySVC.wsdl" MetadataType="Wsdl" ID="aa3dd0fd-bce3-4f09-b01a-1ad41d3fcdcc" SourceId="1" SourceUrl="http://localhost:55368/luMachineFamily.svc?wsdl" />
+    <MetadataFile FileName="luMachineFamily2.xsd" MetadataType="Schema" ID="71a441d5-d8eb-4954-974a-5c64d4efbed6" SourceId="1" SourceUrl="http://localhost:55368/luMachineFamily.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

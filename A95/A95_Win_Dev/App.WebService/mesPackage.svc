@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="mesPackageSVC" Factory="SecurityWcf.Core.WcfServiceHostFactory, SecurityWcf.Core" CodeBehind="~/App_Code/mesPackage.cs" %>

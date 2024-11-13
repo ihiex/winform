@@ -1,0 +1,13 @@
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\App.MyMES\bin\Debug\BarPrint.exe.config
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\App.MyMES\bin\Debug\BarPrint.exe
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\App.MyMES\bin\Debug\BarPrint.pdb
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\BarPrint\obj\Debug\BarPrint.csprojAssemblyReference.cache
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\BarPrint\obj\Debug\Interop.BarTender.dll
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\BarPrint\obj\Debug\BarPrint.csproj.ResolveComReference.cache
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\BarPrint\obj\Debug\BarPrint.BarTender_Form.resources
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\BarPrint\obj\Debug\BarPrint.Print2_Form.resources
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\BarPrint\obj\Debug\BarPrint.csproj.GenerateResource.cache
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\BarPrint\obj\Debug\BarPrint.csproj.CoreCompileInputs.cache
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\BarPrint\obj\Debug\BarPrint.csproj.CopyComplete
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\BarPrint\obj\Debug\BarPrint.exe
+E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\BarPrint\obj\Debug\BarPrint.pdb

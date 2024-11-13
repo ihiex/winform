@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/App.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/App.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="luDefect">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefectCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefectTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocaltionID" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="luDefect" nillable="true" type="tns:luDefect" />
+  <xs:complexType name="ArrayOfluDefect">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="luDefect" nillable="true" type="tns:luDefect" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfluDefect" nillable="true" type="tns:ArrayOfluDefect" />
+</xs:schema>

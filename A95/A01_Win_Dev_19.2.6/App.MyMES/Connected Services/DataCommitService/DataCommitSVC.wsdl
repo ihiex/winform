@@ -1,0 +1,1390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DataCommitSVC" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:ProtectionToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                  <wsp:Policy>
+                    <sp:RequireDerivedKeys />
+                    <sp:RequireThumbprintReference />
+                    <sp:WssX509V3Token10 />
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:ProtectionToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+            <sp:OnlySignEntireHeadersAndBody />
+          </wsp:Policy>
+        </sp:SymmetricBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:RequireThumbprintReference />
+                <sp:WssX509V3Token10 />
+              </wsp:Policy>
+            </sp:X509Token>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportRefThumbprint />
+            <sp:MustSupportRefEncryptedKey />
+            <sp:RequireSignatureConfirmation />
+          </wsp:Policy>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <gzip:GZipEncoding xmlns:gzip="http://schemas.microsoft.com/ws/06/2004/mspolicy/netgzip1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SubmitDataUH_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SubmitDataUH_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SubmitDataUHD_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SubmitDataUHD_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SubmitDataUHCD_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SubmitDataUHCD_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SubmitDataUHC_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SubmitDataUHC_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_InsertUDS_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_InsertUDS_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_UpdatemesUnit_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_UpdatemesUnit_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_InsertALL_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_InsertALL_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SubmitDataUH_UDetail_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SubmitDataUH_UDetail_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_uspPalletPackaging_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_uspPalletPackaging_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_MoveShipment_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_MoveShipment_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetShipmentMultipack_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetShipmentMultipack_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetMesPackageShipment_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetMesPackageShipment_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetMesPackageShipmentRoll_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetMesPackageShipmentRoll_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_GetShipmentPalletSN_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_GetShipmentPalletSN_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_GetIsOutCountComplete_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_GetIsOutCountComplete_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_uspPalletPackagingPrintOne_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_uspPalletPackagingPrintOne_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_MoveShipmentPrintOne_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_MoveShipmentPrintOne_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetShipmentMultipackPrintOne_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetShipmentMultipackPrintOne_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetMesPackageShipmentPrintOne_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetMesPackageShipmentPrintOne_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetMesPackageShipmentRollPrintOne_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetMesPackageShipmentRollPrintOne_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetCancelInWH_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetCancelInWH_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetCancelInWHEntry_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IDataCommitSVC_SetCancelInWHEntry_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55368/DataCommit.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55368/DataCommit.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55368/DataCommit.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/App.Model" />
+      <xsd:import schemaLocation="http://localhost:55368/DataCommit.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:55368/DataCommit.svc?xsd=xsd4" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDataCommitSVC_SubmitDataUH_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDataUH" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SubmitDataUH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDataUHResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SubmitDataUHD_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDataUHD" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SubmitDataUHD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDataUHDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SubmitDataUHCD_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDataUHCD" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SubmitDataUHCD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDataUHCDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SubmitDataUHC_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDataUHC" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SubmitDataUHC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDataUHCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_InsertUDS_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUDS" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_InsertUDS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_UpdatemesUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatemesUnit" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_UpdatemesUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatemesUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_InsertALL_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertALL" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_InsertALL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertALLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SubmitDataUH_UDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDataUH_UDetail" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SubmitDataUH_UDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDataUH_UDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_uspPalletPackaging_InputMessage">
+    <wsdl:part name="parameters" element="tns:uspPalletPackaging" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_uspPalletPackaging_OutputMessage">
+    <wsdl:part name="parameters" element="tns:uspPalletPackagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_MoveShipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveShipment" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_MoveShipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetShipmentMultipack_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetShipmentMultipack" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetShipmentMultipack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetShipmentMultipackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetMesPackageShipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMesPackageShipment" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetMesPackageShipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetMesPackageShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetMesPackageShipmentRoll_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMesPackageShipmentRoll" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetMesPackageShipmentRoll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetMesPackageShipmentRollResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_GetShipmentPalletSN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipmentPalletSN" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_GetShipmentPalletSN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipmentPalletSNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_GetIsOutCountComplete_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsOutCountComplete" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_GetIsOutCountComplete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsOutCountCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_uspPalletPackagingPrintOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:uspPalletPackagingPrintOne" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_uspPalletPackagingPrintOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:uspPalletPackagingPrintOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_MoveShipmentPrintOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveShipmentPrintOne" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_MoveShipmentPrintOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveShipmentPrintOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetShipmentMultipackPrintOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetShipmentMultipackPrintOne" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetShipmentMultipackPrintOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetShipmentMultipackPrintOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetMesPackageShipmentPrintOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMesPackageShipmentPrintOne" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetMesPackageShipmentPrintOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetMesPackageShipmentPrintOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetMesPackageShipmentRollPrintOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMesPackageShipmentRollPrintOne" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetMesPackageShipmentRollPrintOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetMesPackageShipmentRollPrintOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetCancelInWH_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCancelInWH" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetCancelInWH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCancelInWHResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetCancelInWHEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCancelInWHEntry" />
+  </wsdl:message>
+  <wsdl:message name="IDataCommitSVC_SetCancelInWHEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCancelInWHEntryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDataCommitSVC">
+    <wsdl:operation name="SubmitDataUH">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SubmitDataUH" message="tns:IDataCommitSVC_SubmitDataUH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SubmitDataUHResponse" message="tns:IDataCommitSVC_SubmitDataUH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDataUHD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SubmitDataUHD" message="tns:IDataCommitSVC_SubmitDataUHD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SubmitDataUHDResponse" message="tns:IDataCommitSVC_SubmitDataUHD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDataUHCD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SubmitDataUHCD" message="tns:IDataCommitSVC_SubmitDataUHCD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SubmitDataUHCDResponse" message="tns:IDataCommitSVC_SubmitDataUHCD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDataUHC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SubmitDataUHC" message="tns:IDataCommitSVC_SubmitDataUHC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SubmitDataUHCResponse" message="tns:IDataCommitSVC_SubmitDataUHC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUDS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/InsertUDS" message="tns:IDataCommitSVC_InsertUDS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/InsertUDSResponse" message="tns:IDataCommitSVC_InsertUDS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatemesUnit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/UpdatemesUnit" message="tns:IDataCommitSVC_UpdatemesUnit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/UpdatemesUnitResponse" message="tns:IDataCommitSVC_UpdatemesUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertALL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/InsertALL" message="tns:IDataCommitSVC_InsertALL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/InsertALLResponse" message="tns:IDataCommitSVC_InsertALL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDataUH_UDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SubmitDataUH_UDetail" message="tns:IDataCommitSVC_SubmitDataUH_UDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SubmitDataUH_UDetailResponse" message="tns:IDataCommitSVC_SubmitDataUH_UDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="uspPalletPackaging">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/uspPalletPackaging" message="tns:IDataCommitSVC_uspPalletPackaging_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/uspPalletPackagingResponse" message="tns:IDataCommitSVC_uspPalletPackaging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveShipment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/MoveShipment" message="tns:IDataCommitSVC_MoveShipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/MoveShipmentResponse" message="tns:IDataCommitSVC_MoveShipment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetShipmentMultipack">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SetShipmentMultipack" message="tns:IDataCommitSVC_SetShipmentMultipack_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SetShipmentMultipackResponse" message="tns:IDataCommitSVC_SetShipmentMultipack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMesPackageShipment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SetMesPackageShipment" message="tns:IDataCommitSVC_SetMesPackageShipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SetMesPackageShipmentResponse" message="tns:IDataCommitSVC_SetMesPackageShipment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMesPackageShipmentRoll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SetMesPackageShipmentRoll" message="tns:IDataCommitSVC_SetMesPackageShipmentRoll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SetMesPackageShipmentRollResponse" message="tns:IDataCommitSVC_SetMesPackageShipmentRoll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShipmentPalletSN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/GetShipmentPalletSN" message="tns:IDataCommitSVC_GetShipmentPalletSN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/GetShipmentPalletSNResponse" message="tns:IDataCommitSVC_GetShipmentPalletSN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsOutCountComplete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/GetIsOutCountComplete" message="tns:IDataCommitSVC_GetIsOutCountComplete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/GetIsOutCountCompleteResponse" message="tns:IDataCommitSVC_GetIsOutCountComplete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="uspPalletPackagingPrintOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/uspPalletPackagingPrintOne" message="tns:IDataCommitSVC_uspPalletPackagingPrintOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/uspPalletPackagingPrintOneResponse" message="tns:IDataCommitSVC_uspPalletPackagingPrintOne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveShipmentPrintOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/MoveShipmentPrintOne" message="tns:IDataCommitSVC_MoveShipmentPrintOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/MoveShipmentPrintOneResponse" message="tns:IDataCommitSVC_MoveShipmentPrintOne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetShipmentMultipackPrintOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SetShipmentMultipackPrintOne" message="tns:IDataCommitSVC_SetShipmentMultipackPrintOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SetShipmentMultipackPrintOneResponse" message="tns:IDataCommitSVC_SetShipmentMultipackPrintOne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMesPackageShipmentPrintOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SetMesPackageShipmentPrintOne" message="tns:IDataCommitSVC_SetMesPackageShipmentPrintOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SetMesPackageShipmentPrintOneResponse" message="tns:IDataCommitSVC_SetMesPackageShipmentPrintOne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMesPackageShipmentRollPrintOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SetMesPackageShipmentRollPrintOne" message="tns:IDataCommitSVC_SetMesPackageShipmentRollPrintOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SetMesPackageShipmentRollPrintOneResponse" message="tns:IDataCommitSVC_SetMesPackageShipmentRollPrintOne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCancelInWH">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SetCancelInWH" message="tns:IDataCommitSVC_SetCancelInWH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SetCancelInWHResponse" message="tns:IDataCommitSVC_SetCancelInWH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCancelInWHEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataCommitSVC/SetCancelInWHEntry" message="tns:IDataCommitSVC_SetCancelInWHEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataCommitSVC/SetCancelInWHEntryResponse" message="tns:IDataCommitSVC_SetCancelInWHEntry_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IDataCommitSVC" type="tns:IDataCommitSVC">
+    <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubmitDataUH">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SubmitDataUH" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SubmitDataUH_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SubmitDataUH_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDataUHD">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SubmitDataUHD" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SubmitDataUHD_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SubmitDataUHD_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDataUHCD">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SubmitDataUHCD" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SubmitDataUHCD_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SubmitDataUHCD_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDataUHC">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SubmitDataUHC" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SubmitDataUHC_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SubmitDataUHC_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUDS">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/InsertUDS" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_InsertUDS_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_InsertUDS_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatemesUnit">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/UpdatemesUnit" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_UpdatemesUnit_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_UpdatemesUnit_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertALL">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/InsertALL" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_InsertALL_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_InsertALL_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDataUH_UDetail">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SubmitDataUH_UDetail" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SubmitDataUH_UDetail_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SubmitDataUH_UDetail_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uspPalletPackaging">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/uspPalletPackaging" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_uspPalletPackaging_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_uspPalletPackaging_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveShipment">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/MoveShipment" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_MoveShipment_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_MoveShipment_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetShipmentMultipack">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SetShipmentMultipack" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetShipmentMultipack_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetShipmentMultipack_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMesPackageShipment">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SetMesPackageShipment" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetMesPackageShipment_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetMesPackageShipment_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMesPackageShipmentRoll">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SetMesPackageShipmentRoll" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetMesPackageShipmentRoll_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetMesPackageShipmentRoll_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipmentPalletSN">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/GetShipmentPalletSN" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_GetShipmentPalletSN_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_GetShipmentPalletSN_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsOutCountComplete">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/GetIsOutCountComplete" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_GetIsOutCountComplete_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_GetIsOutCountComplete_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uspPalletPackagingPrintOne">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/uspPalletPackagingPrintOne" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_uspPalletPackagingPrintOne_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_uspPalletPackagingPrintOne_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveShipmentPrintOne">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/MoveShipmentPrintOne" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_MoveShipmentPrintOne_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_MoveShipmentPrintOne_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetShipmentMultipackPrintOne">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SetShipmentMultipackPrintOne" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetShipmentMultipackPrintOne_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetShipmentMultipackPrintOne_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMesPackageShipmentPrintOne">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SetMesPackageShipmentPrintOne" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetMesPackageShipmentPrintOne_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetMesPackageShipmentPrintOne_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMesPackageShipmentRollPrintOne">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SetMesPackageShipmentRollPrintOne" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetMesPackageShipmentRollPrintOne_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetMesPackageShipmentRollPrintOne_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCancelInWH">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SetCancelInWH" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetCancelInWH_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetCancelInWH_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCancelInWHEntry">
+      <soap12:operation soapAction="http://tempuri.org/IDataCommitSVC/SetCancelInWHEntry" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetCancelInWHEntry_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CustomBinding_IDataCommitSVC_SetCancelInWHEntry_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DataCommitSVC">
+    <wsdl:port name="CustomBinding_IDataCommitSVC" binding="tns:CustomBinding_IDataCommitSVC">
+      <soap12:address location="http://localhost:55368/DataCommit.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:55368/DataCommit.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <X509Data>
+              <X509Certificate>MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew=</X509Certificate>
+            </X509Data>
+          </KeyInfo>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

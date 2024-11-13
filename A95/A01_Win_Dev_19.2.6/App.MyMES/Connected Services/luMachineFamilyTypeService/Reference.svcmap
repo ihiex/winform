@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ce57595e-bf00-4fa6-a77b-593fa0da80ec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/luMachineFamilyType.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="luMachineFamilyType.xsd" MetadataType="Schema" ID="12e25c39-8533-4765-af86-11d54c4e6359" SourceId="1" SourceUrl="http://localhost:55368/luMachineFamilyType.svc?xsd=xsd0" />
+    <MetadataFile FileName="luMachineFamilyType1.xsd" MetadataType="Schema" ID="064b853b-7e75-4c91-a5b2-80856739a84f" SourceId="1" SourceUrl="http://localhost:55368/luMachineFamilyType.svc?xsd=xsd1" />
+    <MetadataFile FileName="luMachineFamilyTypeSVC.wsdl" MetadataType="Wsdl" ID="d782f33e-aadc-49eb-82f4-870feb1b1cea" SourceId="1" SourceUrl="http://localhost:55368/luMachineFamilyType.svc?wsdl" />
+    <MetadataFile FileName="luMachineFamilyType2.xsd" MetadataType="Schema" ID="637fd377-5bbd-4ac3-885c-8c5a90c72193" SourceId="1" SourceUrl="http://localhost:55368/luMachineFamilyType.svc?xsd=xsd2" />
+    <MetadataFile FileName="luMachineFamilyType.disco" MetadataType="Disco" ID="5efc2808-7c4d-4c1f-9cdc-ab186b6d4001" SourceId="1" SourceUrl="http://localhost:55368/luMachineFamilyType.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,15 @@
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.DBUtility\bin\Release\App.DBUtility.dll
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.DBUtility\bin\Release\App.DBUtility.pdb
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.DBUtility\obj\Release\App.DBUtility.Properties.Resources.resources
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.DBUtility\obj\Release\App.DBUtility.csproj.GenerateResource.cache
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.DBUtility\obj\Release\App.DBUtility.csproj.CoreCompileInputs.cache
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.DBUtility\obj\Release\App.DBUtility.dll
+E:\2-MyCode\A01\A01_New_20200313\A01_Win_Dev\App.DBUtility\obj\Release\App.DBUtility.pdb
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.DBUtility\bin\Release\App.DBUtility.dll
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.DBUtility\bin\Release\App.DBUtility.pdb
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.DBUtility\obj\Release\App.DBUtility.csprojAssemblyReference.cache
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.DBUtility\obj\Release\App.DBUtility.Properties.Resources.resources
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.DBUtility\obj\Release\App.DBUtility.csproj.GenerateResource.cache
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.DBUtility\obj\Release\App.DBUtility.csproj.CoreCompileInputs.cache
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.DBUtility\obj\Release\App.DBUtility.dll
+E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.DBUtility\obj\Release\App.DBUtility.pdb

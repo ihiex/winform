@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e9c1b0b0-9097-4ce6-9879-b8683109437b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesUnitState.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesUnitStateSVC.wsdl" MetadataType="Wsdl" ID="ea7fdd8b-98f8-4dd1-9a55-4205b07d3e55" SourceId="1" SourceUrl="http://localhost:55368/mesUnitState.svc?wsdl" />
+    <MetadataFile FileName="mesUnitState.xsd" MetadataType="Schema" ID="cc44de8f-66bb-4d39-9329-716bc9950afe" SourceId="1" SourceUrl="http://localhost:55368/mesUnitState.svc?xsd=xsd1" />
+    <MetadataFile FileName="mesUnitState.disco" MetadataType="Disco" ID="af0de25f-9aee-4440-a4ac-20dcf3410fc2" SourceId="1" SourceUrl="http://localhost:55368/mesUnitState.svc?disco" />
+    <MetadataFile FileName="mesUnitState1.xsd" MetadataType="Schema" ID="18cfaf12-1ae9-4fba-84a9-fbd8f874e206" SourceId="1" SourceUrl="http://localhost:55368/mesUnitState.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesUnitState2.xsd" MetadataType="Schema" ID="9c6a5f02-d06f-4cc6-b184-dd41270ebf5d" SourceId="1" SourceUrl="http://localhost:55368/mesUnitState.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

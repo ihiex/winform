@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/App.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/App.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="mesUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LooperCount" type="xs:int" />
+      <xs:element minOccurs="0" name="PanelID" type="xs:int" />
+      <xs:element minOccurs="0" name="PartFamilyID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PartID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductionOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="RMAID" type="xs:int" />
+      <xs:element minOccurs="0" name="SNFamilyID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SerialNumberType" type="xs:int" />
+      <xs:element minOccurs="0" name="StationID" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusID" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitStateID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mesUnit" nillable="true" type="tns:mesUnit" />
+  <xs:complexType name="LoginList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="StationID" type="xs:int" />
+      <xs:element minOccurs="0" name="StationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="Ver" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginList" nillable="true" type="tns:LoginList" />
+</xs:schema>

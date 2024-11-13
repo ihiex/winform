@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA5C3BFC-F857-4C08-9793-A14DCD99FBD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.Model</RootNamespace>
+    <AssemblyName>App.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MES_Key.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Test1.cs" />
+    <Compile Include="LoginList.cs" />
+    <Compile Include="SelectRowSEQ.cs" />
+    <Compile Include="Table\luAction.cs" />
+    <Compile Include="Table\luAMLDetailDef.cs" />
+    <Compile Include="Table\luAMLStatus.cs" />
+    <Compile Include="Table\luApplicationType.cs" />
+    <Compile Include="Table\luAuditStatus.cs" />
+    <Compile Include="Table\luAvailableSNStatus.cs" />
+    <Compile Include="Table\luBasicFunctionType.cs" />
+    <Compile Include="Table\luControlChartDetailDef.cs" />
+    <Compile Include="Table\luControlChartType.cs" />
+    <Compile Include="Table\luControlParameter.cs" />
+    <Compile Include="Table\luDebugDetailDef.cs" />
+    <Compile Include="Table\luDefect.cs" />
+    <Compile Include="Table\luEBOMDetailDef.cs" />
+    <Compile Include="Table\luEmployeeDetailDef.cs" />
+    <Compile Include="Table\luEmployeeGroup.cs" />
+    <Compile Include="Table\luEmployeeStatus.cs" />
+    <Compile Include="Table\luFailure.cs" />
+    <Compile Include="Table\luFailureCategory.cs" />
+    <Compile Include="Table\luJig.cs" />
+    <Compile Include="Table\luLabelFamily.cs" />
+    <Compile Include="Table\luLotRecordingDetailDef.cs" />
+    <Compile Include="Table\luMachine.cs" />
+    <Compile Include="Table\luMachineFamily.cs" />
+    <Compile Include="Table\luMachineFamilyType.cs" />
+    <Compile Include="Table\luMeasurementGroupDetailDef.cs" />
+    <Compile Include="Table\luMeasurementGroupStatus.cs" />
+    <Compile Include="Table\luMeasurementSubGroupDetailDef.cs" />
+    <Compile Include="Table\luMRBStatus.cs" />
+    <Compile Include="Table\luNStrikeCategory.cs" />
+    <Compile Include="Table\luOutputStateDef.cs" />
+    <Compile Include="Table\luPackageDetailDef.cs" />
+    <Compile Include="Table\luPackageStatus.cs" />
+    <Compile Include="Table\luPartDetailDef.cs" />
+    <Compile Include="Table\luPartFamily.cs" />
+    <Compile Include="Table\luPartFamilyDetailDef.cs" />
+    <Compile Include="Table\luPartFamilyType.cs" />
+    <Compile Include="Table\luProductionOrderDetailDef.cs" />
+    <Compile Include="Table\luProductionOrderStatus.cs" />
+    <Compile Include="Table\luReceivingHoldStatus.cs" />
+    <Compile Include="Table\luRepairDetailDef.cs" />
+    <Compile Include="Table\luReworkAction.cs" />
+    <Compile Include="Table\luRMADetailDef.cs" />
+    <Compile Include="Table\luRMAStatus.cs" />
+    <Compile Include="Table\luSalesOrderDetailDef.cs" />
+    <Compile Include="Table\luSerialNumberType.cs" />
+    <Compile Include="Table\luSlot.cs" />
+    <Compile Include="Table\luSNFamily.cs" />
+    <Compile Include="Table\luSNRangeStatus.cs" />
+    <Compile Include="Table\luStationStatus.cs" />
+    <Compile Include="Table\luStopReason.cs" />
+    <Compile Include="Table\luTemplateCategory.cs" />
+    <Compile Include="Table\luTestDetailDef.cs" />
+    <Compile Include="Table\luTestType.cs" />
+    <Compile Include="Table\luUnitComponentDetailDef.cs" />
+    <Compile Include="Table\luUnitComponentStatus.cs" />
+    <Compile Include="Table\luUnitComponentType.cs" />
+    <Compile Include="Table\luUnitPartOnHoldStatus.cs" />
+    <Compile Include="Table\luUnitStatus.cs" />
+    <Compile Include="Table\luUnitStatusReason.cs" />
+    <Compile Include="Table\mesActionLog.cs" />
+    <Compile Include="Table\mesAML.cs" />
+    <Compile Include="Table\mesAMLDetail.cs" />
+    <Compile Include="Table\mesApplicationOperation.cs" />
+    <Compile Include="Table\mesApplicationSection.cs" />
+    <Compile Include="Table\mesAuditLot.cs" />
+    <Compile Include="Table\mesAuditLotServer.cs" />
+    <Compile Include="Table\mesAuditThreshold.cs" />
+    <Compile Include="Table\mesAvailableSN.cs" />
+    <Compile Include="Table\mesBasicDefaultSetting.cs" />
+    <Compile Include="Table\mesBasicDefaultSettingRule.cs" />
+    <Compile Include="Table\mesBasicFunction.cs" />
+    <Compile Include="Table\mesControlChart.cs" />
+    <Compile Include="Table\mesControlChartDetail.cs" />
+    <Compile Include="Table\mesDebug.cs" />
+    <Compile Include="Table\mesDebugDetail.cs" />
+    <Compile Include="Table\mesDefectStructure.cs" />
+    <Compile Include="Table\mesEBOM.cs" />
+    <Compile Include="Table\mesEBOMDetail.cs" />
+    <Compile Include="Table\mesEmployee.cs" />
+    <Compile Include="Table\mesEmployeeDetail.cs" />
+    <Compile Include="Table\mesFailureDefect.cs" />
+    <Compile Include="Table\mesFailureStructure.cs" />
+    <Compile Include="Table\mesGroupAccess.cs" />
+    <Compile Include="Table\mesHistory.cs" />
+    <Compile Include="Table\mesImportProduct.cs" />
+    <Compile Include="Table\mesInLineQAProcess.cs" />
+    <Compile Include="Table\mesLabel.cs" />
+    <Compile Include="Table\mesLabelField.cs" />
+    <Compile Include="Table\mesLabelFieldDefinition.cs" />
+    <Compile Include="Table\mesLabelFormat.cs" />
+    <Compile Include="Table\mesLine.cs" />
+    <Compile Include="Table\mesLineOrder.cs" />
+    <Compile Include="Table\mesLotControl.cs" />
+    <Compile Include="Table\mesLotControlServer.cs" />
+    <Compile Include="Table\mesLotRecording.cs" />
+    <Compile Include="Table\mesLotRecordingDetail.cs" />
+    <Compile Include="Table\mesLotVerification.cs" />
+    <Compile Include="Table\mesMachine.cs" />
+    <Compile Include="Table\mesMeasurementConfig.cs" />
+    <Compile Include="Table\mesMeasurementDetailFail.cs" />
+    <Compile Include="Table\mesMeasurementDetailFailExtra.cs" />
+    <Compile Include="Table\mesMeasurementDetailPass.cs" />
+    <Compile Include="Table\mesMeasurementDetailPassExtra.cs" />
+    <Compile Include="Table\mesMeasurementGroup.cs" />
+    <Compile Include="Table\mesMeasurementGroupDetail.cs" />
+    <Compile Include="Table\mesMeasurementSection.cs" />
+    <Compile Include="Table\mesMeasurementSubGroup.cs" />
+    <Compile Include="Table\mesMeasurementSubGroupDetail.cs" />
+    <Compile Include="Table\mesMRB.cs" />
+    <Compile Include="Table\mesNotification.cs" />
+    <Compile Include="Table\mesNStrikeDefaultSetting.cs" />
+    <Compile Include="Table\mesNStrikeDefaultSettingRule.cs" />
+    <Compile Include="Table\mesNStrikeDefinition.cs" />
+    <Compile Include="Table\mesNStrikeGroup.cs" />
+    <Compile Include="Table\mesNStrikeRule.cs" />
+    <Compile Include="Table\mesNStrikeRuleSection.cs" />
+    <Compile Include="Table\mesNStrikeType.cs" />
+    <Compile Include="Table\mesPackage.cs" />
+    <Compile Include="Table\mesPackageDetail.cs" />
+    <Compile Include="Table\mesPackageHistory.cs" />
+    <Compile Include="Table\mesPackageServer.cs" />
+    <Compile Include="Table\mesParameter.cs" />
+    <Compile Include="Table\mesPart.cs" />
+    <Compile Include="Table\mesPartDependent.cs" />
+    <Compile Include="Table\mesPartDetail.cs" />
+    <Compile Include="Table\mesPartFamilyDetail.cs" />
+    <Compile Include="Table\mesPartFamilyStructure.cs" />
+    <Compile Include="Table\mesProductionOrder.cs" />
+    <Compile Include="Table\mesProductionOrderDetail.cs" />
+    <Compile Include="Table\mesProductionOrderHistory.cs" />
+    <Compile Include="Table\mesProductStructure.cs" />
+    <Compile Include="Table\mesReceivingHoldInfo.cs" />
+    <Compile Include="Table\mesRefDesignator.cs" />
+    <Compile Include="Table\mesRepair.cs" />
+    <Compile Include="Table\mesRepairDetail.cs" />
+    <Compile Include="Table\mesReworkActionStructure.cs" />
+    <Compile Include="Table\mesRMA.cs" />
+    <Compile Include="Table\mesRMADetail.cs" />
+    <Compile Include="Table\mesRoute.cs" />
+    <Compile Include="Table\mesRouteDetail.cs" />
+    <Compile Include="Table\mesRouteMachineMap.cs" />
+    <Compile Include="Table\mesRouteMap.cs" />
+    <Compile Include="Table\mesSalesOrder.cs" />
+    <Compile Include="Table\mesSalesOrderDetail.cs" />
+    <Compile Include="Table\mesSalesProduction.cs" />
+    <Compile Include="Table\mesSectionDetail.cs" />
+    <Compile Include="Table\mesSectionGroup.cs" />
+    <Compile Include="Table\mesSectionHeader.cs" />
+    <Compile Include="Table\mesSerialNumber.cs" />
+    <Compile Include="Table\mesSerialNumberOfLine.cs" />
+    <Compile Include="Table\mesSNFormat.cs" />
+    <Compile Include="Table\mesSNRange.cs" />
+    <Compile Include="Table\mesSNSection.cs" />
+    <Compile Include="Table\mesStation.cs" />
+    <Compile Include="Table\mesStationAvailability.cs" />
+    <Compile Include="Table\mesStationConfigSetting.cs" />
+    <Compile Include="Table\mesStationType.cs" />
+    <Compile Include="Table\mesStationTypeAccess.cs" />
+    <Compile Include="Table\mesTask.cs" />
+    <Compile Include="Table\mesTaskGroup.cs" />
+    <Compile Include="Table\mesTaskGroupDefinition.cs" />
+    <Compile Include="Table\mesTaskSetting.cs" />
+    <Compile Include="Table\mesTemplate.cs" />
+    <Compile Include="Table\mesTemplateDefinition.cs" />
+    <Compile Include="Table\mesTest.cs" />
+    <Compile Include="Table\mesTestDetail.cs" />
+    <Compile Include="Table\mesTestExtra.cs" />
+    <Compile Include="Table\mesTestRef.cs" />
+    <Compile Include="Table\mesTestStepFail.cs" />
+    <Compile Include="Table\mesTestStepFailExtra.cs" />
+    <Compile Include="Table\mesTestStepPass.cs" />
+    <Compile Include="Table\mesTestStepPassExtra.cs" />
+    <Compile Include="Table\mesUnit.cs" />
+    <Compile Include="Table\mesUnitAudit.cs" />
+    <Compile Include="Table\mesUnitComponent.cs" />
+    <Compile Include="Table\mesUnitComponentDetail.cs" />
+    <Compile Include="Table\mesUnitDefect.cs" />
+    <Compile Include="Table\mesUnitDetail.cs" />
+    <Compile Include="Table\mesUnitHoldHistory.cs" />
+    <Compile Include="Table\mesUnitInputState.cs" />
+    <Compile Include="Table\mesUnitOutputState.cs" />
+    <Compile Include="Table\mesUnitPartOnHold.cs" />
+    <Compile Include="Table\mesUnitServer.cs" />
+    <Compile Include="Table\mesUnitState.cs" />
+    <Compile Include="Table\mesUnitStatusHistory.cs" />
+    <Compile Include="Table\mesUnusedSN.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table\sysDBInfo.cs" />
+    <Compile Include="Table\sysDBLogin.cs" />
+    <Compile Include="Table\sysErrorLog.cs" />
+    <Compile Include="Table\sysFieldDefinition.cs" />
+    <Compile Include="Table\sysImage.cs" />
+    <Compile Include="Table\sysLanguage.cs" />
+    <Compile Include="Table\sysOperationHistory.cs" />
+    <Compile Include="Table\sysServerInfo.cs" />
+    <Compile Include="Table\sysShift.cs" />
+    <Compile Include="Table\sysStatus.cs" />
+    <Compile Include="Table\sysTableCategory.cs" />
+    <Compile Include="Table\sysUserSetting.cs" />
+    <Compile Include="Table\sysVar.cs" />
+    <Compile Include="Table\sysVersion.cs" />
+    <Compile Include="Table\xml_Categories.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="MES_Key.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

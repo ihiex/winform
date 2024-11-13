@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1f698e18-ffc3-47ae-8eda-99c42c1b478d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesPackage.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesPackage.xsd" MetadataType="Schema" ID="70394ad1-d39e-4f7e-900b-16fd9413f546" SourceId="1" SourceUrl="http://localhost:55368/mesPackage.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesPackage.disco" MetadataType="Disco" ID="a3c80790-4cba-4d0d-8371-9db9d82b6e11" SourceId="1" SourceUrl="http://localhost:55368/mesPackage.svc?disco" />
+    <MetadataFile FileName="mesPackageSVC.wsdl" MetadataType="Wsdl" ID="09bf9548-f267-4c1c-9156-4128ccf0d07f" SourceId="1" SourceUrl="http://localhost:55368/mesPackage.svc?wsdl" />
+    <MetadataFile FileName="mesPackage1.xsd" MetadataType="Schema" ID="1c87bb1f-64f3-42c9-95c0-0e7284b43055" SourceId="1" SourceUrl="http://localhost:55368/mesPackage.svc?xsd=xsd2" />
+    <MetadataFile FileName="mesPackage2.xsd" MetadataType="Schema" ID="eb3e22f6-3919-474b-967c-ac96c8782f13" SourceId="1" SourceUrl="http://localhost:55368/mesPackage.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c3804ea3-043f-40b3-bf98-485f73306c1e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/PartSelectSVC.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PartSelectSVC4.xsd" MetadataType="Schema" ID="c9123ca3-4946-4d3a-af3a-c6dea3129ea6" SourceId="1" SourceUrl="http://localhost:55368/PartSelectSVC.svc?xsd=xsd4" />
+    <MetadataFile FileName="PartSelectSVC.wsdl" MetadataType="Wsdl" ID="3cdaa0bf-8d85-4194-9719-302e6a1f2fb0" SourceId="1" SourceUrl="http://localhost:55368/PartSelectSVC.svc?wsdl" />
+    <MetadataFile FileName="PartSelectSVC.disco" MetadataType="Disco" ID="8ec49a1f-a5a1-4bfb-a6cb-f746ae04eb2e" SourceId="1" SourceUrl="http://localhost:55368/PartSelectSVC.svc?disco" />
+    <MetadataFile FileName="PartSelectSVC3.xsd" MetadataType="Schema" ID="93be9b01-e8ba-4b13-af0e-58097a30e2b1" SourceId="1" SourceUrl="http://localhost:55368/PartSelectSVC.svc?xsd=xsd3" />
+    <MetadataFile FileName="PartSelectSVC.xsd" MetadataType="Schema" ID="4112b193-482c-4ac5-b3a5-441ea726d93f" SourceId="1" SourceUrl="http://localhost:55368/PartSelectSVC.svc?xsd=xsd2" />
+    <MetadataFile FileName="PartSelectSVC1.xsd" MetadataType="Schema" ID="eceb1c55-c185-425e-9ce0-31ee1a7d4c78" SourceId="1" SourceUrl="http://localhost:55368/PartSelectSVC.svc?xsd=xsd1" />
+    <MetadataFile FileName="PartSelectSVC2.xsd" MetadataType="Schema" ID="2fe285e5-4d87-447a-b411-402bf853ceb5" SourceId="1" SourceUrl="http://localhost:55368/PartSelectSVC.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d57d94a1-a75e-45b4-9369-89294d3953bd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesStation.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesStation.xsd" MetadataType="Schema" ID="b57d9961-ca4d-4615-a011-e762d8d1909d" SourceId="1" SourceUrl="http://localhost:55368/mesStation.svc?xsd=xsd2" />
+    <MetadataFile FileName="mesStation1.xsd" MetadataType="Schema" ID="c532ac07-54e5-4a49-b815-9a065eeb684a" SourceId="1" SourceUrl="http://localhost:55368/mesStation.svc?xsd=xsd1" />
+    <MetadataFile FileName="mesStation2.xsd" MetadataType="Schema" ID="020229db-f2cd-4c87-b47c-d0c71c09953f" SourceId="1" SourceUrl="http://localhost:55368/mesStation.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesStationSVC.wsdl" MetadataType="Wsdl" ID="f3b1effa-83a0-48dc-89ac-2a74c7100c20" SourceId="1" SourceUrl="http://localhost:55368/mesStation.svc?wsdl" />
+    <MetadataFile FileName="mesStation.disco" MetadataType="Disco" ID="d54d2888-607c-46f7-81e2-1378a50ecf5a" SourceId="1" SourceUrl="http://localhost:55368/mesStation.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

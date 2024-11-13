@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="486f060b-eaff-4ef5-a1e8-96048941aa6b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesUnit.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesUnit.xsd" MetadataType="Schema" ID="c9da5d1a-8c90-4795-86f7-6e5bf04c8fa2" SourceId="1" SourceUrl="http://localhost:55368/mesUnit.svc?xsd=xsd2" />
+    <MetadataFile FileName="mesUnitSVC.wsdl" MetadataType="Wsdl" ID="3f491122-e3e3-486e-8148-159c7dc83fbe" SourceId="1" SourceUrl="http://localhost:55368/mesUnit.svc?wsdl" />
+    <MetadataFile FileName="mesUnit1.xsd" MetadataType="Schema" ID="f304ad85-115b-44f5-b634-120f9ec5faf5" SourceId="1" SourceUrl="http://localhost:55368/mesUnit.svc?xsd=xsd1" />
+    <MetadataFile FileName="mesUnit2.xsd" MetadataType="Schema" ID="ae8cc2a7-0c03-485d-a3d8-e5eef8719ebc" SourceId="1" SourceUrl="http://localhost:55368/mesUnit.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesUnit.disco" MetadataType="Disco" ID="86a72a1a-cb8b-45d3-a4fc-671297c233f6" SourceId="1" SourceUrl="http://localhost:55368/mesUnit.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

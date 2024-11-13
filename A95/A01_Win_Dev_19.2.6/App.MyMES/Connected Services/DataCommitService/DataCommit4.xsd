@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/App.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/App.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfmesUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mesUnit" nillable="true" type="tns:mesUnit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmesUnit" nillable="true" type="tns:ArrayOfmesUnit" />
+  <xs:complexType name="mesUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LooperCount" type="xs:int" />
+      <xs:element minOccurs="0" name="PanelID" type="xs:int" />
+      <xs:element minOccurs="0" name="PartFamilyID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PartID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductionOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="RMAID" type="xs:int" />
+      <xs:element minOccurs="0" name="SNFamilyID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SerialNumberType" type="xs:int" />
+      <xs:element minOccurs="0" name="StationID" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusID" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitStateID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mesUnit" nillable="true" type="tns:mesUnit" />
+  <xs:complexType name="ArrayOfmesHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mesHistory" nillable="true" type="tns:mesHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmesHistory" nillable="true" type="tns:ArrayOfmesHistory" />
+  <xs:complexType name="mesHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="EnterTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExitTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LooperCount" type="xs:int" />
+      <xs:element minOccurs="0" name="PartID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductionOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="StationID" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitID" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitStateID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mesHistory" nillable="true" type="tns:mesHistory" />
+  <xs:complexType name="ArrayOfmesUnitDefect">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mesUnitDefect" nillable="true" type="tns:mesUnitDefect" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmesUnitDefect" nillable="true" type="tns:ArrayOfmesUnitDefect" />
+  <xs:complexType name="mesUnitDefect">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DefectID" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="StationID" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mesUnitDefect" nillable="true" type="tns:mesUnitDefect" />
+  <xs:complexType name="ArrayOfmesUnitComponent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mesUnitComponent" nillable="true" type="tns:mesUnitComponent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmesUnitComponent" nillable="true" type="tns:ArrayOfmesUnitComponent" />
+  <xs:complexType name="mesUnitComponent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildLotNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildPartFamilyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ChildPartID" type="xs:int" />
+      <xs:element minOccurs="0" name="ChildSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildUnitID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="InsertedEmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="InsertedStationID" type="xs:int" />
+      <xs:element minOccurs="0" name="InsertedTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreviousLink" type="xs:int" />
+      <xs:element minOccurs="0" name="RemovedEmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="RemovedStationID" type="xs:int" />
+      <xs:element minOccurs="0" name="RemovedTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StatusID" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="UnitComponentTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mesUnitComponent" nillable="true" type="tns:mesUnitComponent" />
+  <xs:complexType name="ArrayOfmesMaterialConsumeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mesMaterialConsumeInfo" nillable="true" type="tns:mesMaterialConsumeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmesMaterialConsumeInfo" nillable="true" type="tns:ArrayOfmesMaterialConsumeInfo" />
+  <xs:complexType name="mesMaterialConsumeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConsumeQTY" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="MachineSN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaterialTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PartID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductionOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="SN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScanType" type="xs:int" />
+      <xs:element minOccurs="0" name="StationID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mesMaterialConsumeInfo" nillable="true" type="tns:mesMaterialConsumeInfo" />
+  <xs:complexType name="ArrayOfmesMachine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mesMachine" nillable="true" type="tns:mesMachine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmesMachine" nillable="true" type="tns:ArrayOfmesMachine" />
+  <xs:complexType name="mesMachine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attributes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Discription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastMaintenance" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastRuningTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MachineFamilyID" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxUseQuantity" type="xs:int" />
+      <xs:element minOccurs="0" name="NextMaintenance" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PartDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartGroupDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartID" type="xs:int" />
+      <xs:element minOccurs="0" name="PartNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RuningQuantity" type="xs:int" />
+      <xs:element minOccurs="0" name="SN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartRuningTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="Store" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WarningStatus" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mesMachine" nillable="true" type="tns:mesMachine" />
+  <xs:complexType name="LoginList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsCheckNG" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCheckPO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServerIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SkinID" type="xs:int" />
+      <xs:element minOccurs="0" name="SkinName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Station" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationID" type="xs:int" />
+      <xs:element minOccurs="0" name="StationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="Ver" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginList" nillable="true" type="tns:LoginList" />
+  <xs:complexType name="mesUnitDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="InmostPackageID" type="xs:int" />
+      <xs:element minOccurs="0" name="KitSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LooperCount" type="xs:int" />
+      <xs:element minOccurs="0" name="OutmostPackageID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductionOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="RMAID" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitID" type="xs:int" />
+      <xs:element minOccurs="0" name="reserved_01" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_03" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_05" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_06" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_08" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_09" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_10" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_11" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_12" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_13" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_14" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_15" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_16" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_17" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_18" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_19" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reserved_20" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mesUnitDetail" nillable="true" type="tns:mesUnitDetail" />
+  <xs:complexType name="mesSerialNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SerialNumberTypeID" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="UnitID" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mesSerialNumber" nillable="true" type="tns:mesSerialNumber" />
+  <xs:complexType name="ArrayOfmesUnitDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mesUnitDetail" nillable="true" type="tns:mesUnitDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmesUnitDetail" nillable="true" type="tns:ArrayOfmesUnitDetail" />
+  <xs:complexType name="ArrayOfmesSerialNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mesSerialNumber" nillable="true" type="tns:mesSerialNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmesSerialNumber" nillable="true" type="tns:ArrayOfmesSerialNumber" />
+</xs:schema>

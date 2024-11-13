@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ac6d6840-d432-4516-9565-4e34ccecabba" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/luUnitComponentType.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="luUnitComponentTypeSVC.wsdl" MetadataType="Wsdl" ID="b565e19c-7f99-45a1-a86b-a85b29c3b0d2" SourceId="1" SourceUrl="http://localhost:55368/luUnitComponentType.svc?wsdl" />
+    <MetadataFile FileName="luUnitComponentType.xsd" MetadataType="Schema" ID="1d384bbc-dd93-4590-8051-55eefa5db31a" SourceId="1" SourceUrl="http://localhost:55368/luUnitComponentType.svc?xsd=xsd0" />
+    <MetadataFile FileName="luUnitComponentType1.xsd" MetadataType="Schema" ID="6bee455d-9630-4359-8ea7-1598edb80d9f" SourceId="1" SourceUrl="http://localhost:55368/luUnitComponentType.svc?xsd=xsd1" />
+    <MetadataFile FileName="luUnitComponentType2.xsd" MetadataType="Schema" ID="6fa65d88-7729-42e0-8ccd-d8cfc0fa669d" SourceId="1" SourceUrl="http://localhost:55368/luUnitComponentType.svc?xsd=xsd2" />
+    <MetadataFile FileName="luUnitComponentType.disco" MetadataType="Disco" ID="28d1e2d6-484a-44dc-ab8d-defb1f1f2c8e" SourceId="1" SourceUrl="http://localhost:55368/luUnitComponentType.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
