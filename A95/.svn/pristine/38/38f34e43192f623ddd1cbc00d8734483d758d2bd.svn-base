@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/App.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/App.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="mesMachine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attributes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Discription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastMaintenance" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastRuningTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MachineFamilyID" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxUseQuantity" type="xs:int" />
+      <xs:element minOccurs="0" name="NextMaintenance" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PartDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartGroupDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartID" type="xs:int" />
+      <xs:element minOccurs="0" name="PartNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RuningQuantity" type="xs:int" />
+      <xs:element minOccurs="0" name="SN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartRuningTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="Store" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WarningStatus" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mesMachine" nillable="true" type="tns:mesMachine" />
+  <xs:complexType name="ArrayOfmesMachine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mesMachine" nillable="true" type="tns:mesMachine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmesMachine" nillable="true" type="tns:ArrayOfmesMachine" />
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4eda3524-fb58-4c38-b99b-3ba515c66fee" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesSerialNumberOfLineSVC.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesSerialNumberOfLineSVC.xsd" MetadataType="Schema" ID="15fc0328-f027-45cb-87e8-2c6dcec8710e" SourceId="1" SourceUrl="http://localhost:55368/mesSerialNumberOfLineSVC.svc?xsd=xsd1" />
+    <MetadataFile FileName="mesSerialNumberOfLineSVC1.xsd" MetadataType="Schema" ID="ba7c918a-6f47-497b-82c2-18932bdf7aa6" SourceId="1" SourceUrl="http://localhost:55368/mesSerialNumberOfLineSVC.svc?xsd=xsd2" />
+    <MetadataFile FileName="mesSerialNumberOfLineSVC.disco" MetadataType="Disco" ID="93279c85-888a-47bb-951d-953e3496e601" SourceId="1" SourceUrl="http://localhost:55368/mesSerialNumberOfLineSVC.svc?disco" />
+    <MetadataFile FileName="mesSerialNumberOfLineSVC2.xsd" MetadataType="Schema" ID="1caee222-9f7f-445c-a111-ada5d165b709" SourceId="1" SourceUrl="http://localhost:55368/mesSerialNumberOfLineSVC.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesSerialNumberOfLineSVC.wsdl" MetadataType="Wsdl" ID="b4069787-e7e7-454b-9426-055124e4375d" SourceId="1" SourceUrl="http://localhost:55368/mesSerialNumberOfLineSVC.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

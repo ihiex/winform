@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="efa9d8db-03e0-464a-816d-69ee1fd5c357" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesRoute.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesRoute.xsd" MetadataType="Schema" ID="d0e7b5d7-8f75-4006-aa49-13619d90a2b8" SourceId="1" SourceUrl="http://localhost:55368/mesRoute.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesRouteSVC.wsdl" MetadataType="Wsdl" ID="c195f91b-83d1-4a56-bec5-2c0ec4a43685" SourceId="1" SourceUrl="http://localhost:55368/mesRoute.svc?wsdl" />
+    <MetadataFile FileName="mesRoute1.xsd" MetadataType="Schema" ID="4335105a-8d4b-4196-9bdc-be772737526a" SourceId="1" SourceUrl="http://localhost:55368/mesRoute.svc?xsd=xsd1" />
+    <MetadataFile FileName="mesRoute2.xsd" MetadataType="Schema" ID="a9214fbe-050f-4af9-9a3b-43450e0083c8" SourceId="1" SourceUrl="http://localhost:55368/mesRoute.svc?xsd=xsd2" />
+    <MetadataFile FileName="mesRoute.disco" MetadataType="Disco" ID="3b083a2d-7a6c-49ea-8fe5-f87a6fdcbbe7" SourceId="1" SourceUrl="http://localhost:55368/mesRoute.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

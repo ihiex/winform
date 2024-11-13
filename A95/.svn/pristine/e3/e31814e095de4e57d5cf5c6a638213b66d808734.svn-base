@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f4d49ead-bbc8-485f-9c1b-20d58fc3d846" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/sysStatus.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="sysStatus.xsd" MetadataType="Schema" ID="c5dbbf36-bdf3-45a2-8376-26d5eac669a2" SourceId="1" SourceUrl="http://localhost:55368/sysStatus.svc?xsd=xsd0" />
+    <MetadataFile FileName="sysStatus1.xsd" MetadataType="Schema" ID="ea56dbff-a74e-42cb-8dcb-48d143ea7788" SourceId="1" SourceUrl="http://localhost:55368/sysStatus.svc?xsd=xsd1" />
+    <MetadataFile FileName="sysStatusSVC.wsdl" MetadataType="Wsdl" ID="b61a56f0-e3a2-4e8d-a3ef-5b4a20d44245" SourceId="1" SourceUrl="http://localhost:55368/sysStatus.svc?wsdl" />
+    <MetadataFile FileName="sysStatus.disco" MetadataType="Disco" ID="0894ca61-c323-41ed-8606-281accd16fa5" SourceId="1" SourceUrl="http://localhost:55368/sysStatus.svc?disco" />
+    <MetadataFile FileName="sysStatus2.xsd" MetadataType="Schema" ID="ce289349-f6d1-4dfd-ad9f-78bd26f5d148" SourceId="1" SourceUrl="http://localhost:55368/sysStatus.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

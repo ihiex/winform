@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5360d9a2-063d-48d7-aa4b-d96726a15103" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesSerialNumber.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesSerialNumber.disco" MetadataType="Disco" ID="2315035a-6a24-4856-8c68-2fc3a4fa5b15" SourceId="1" SourceUrl="http://localhost:55368/mesSerialNumber.svc?disco" />
+    <MetadataFile FileName="mesSerialNumberSVC.wsdl" MetadataType="Wsdl" ID="4734c45d-7e5b-4bf4-b0ad-1554aa6d7ccb" SourceId="1" SourceUrl="http://localhost:55368/mesSerialNumber.svc?wsdl" />
+    <MetadataFile FileName="mesSerialNumber.xsd" MetadataType="Schema" ID="5f55b6dc-8774-4b53-baa9-37343d73932a" SourceId="1" SourceUrl="http://localhost:55368/mesSerialNumber.svc?xsd=xsd1" />
+    <MetadataFile FileName="mesSerialNumber1.xsd" MetadataType="Schema" ID="672f9ca5-8902-45ca-823e-f16350a665f7" SourceId="1" SourceUrl="http://localhost:55368/mesSerialNumber.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesSerialNumber2.xsd" MetadataType="Schema" ID="62e2cc0d-0683-4018-956f-50961c7064fa" SourceId="1" SourceUrl="http://localhost:55368/mesSerialNumber.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

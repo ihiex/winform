@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+  </configSections>
+  <appSettings>
+    <add key="WebDAL" value="App.DBServerDAL" />
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+
+    <add key="url" value="" />
+  </appSettings>
+  <connectionStrings>
+
+  </connectionStrings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6" />
+  </startup>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBinding_ITest1" />
+        <binding name="BasicHttpBinding_IluApplicationTypeSVC" />
+        <binding name="BasicHttpBinding_IluEmployeeGroupSVC" />
+        <binding name="BasicHttpBinding_IluMachineFamilySVC" />
+        <binding name="BasicHttpBinding_IluMachineFamilyTypeSVC" />
+        <binding name="BasicHttpBinding_IluPartDetailDefSVC" />
+        <binding name="BasicHttpBinding_IluPartFamilySVC" />
+        <binding name="BasicHttpBinding_IluPartFamilyTypeSVC" />
+        <binding name="BasicHttpBinding_IluSerialNumberTypeSVC" />
+        <binding name="BasicHttpBinding_IluUnitComponentTypeSVC" />
+        <binding name="BasicHttpBinding_IluUnitStatusSVC" />
+        <binding name="BasicHttpBinding_ImesEmployeeSVC" />
+        <binding name="BasicHttpBinding_ImesHistorySVC" />
+        <binding name="BasicHttpBinding_ImesMachineSVC" />
+        <binding name="BasicHttpBinding_ImesPartSVC" />
+        <binding name="BasicHttpBinding_ImesPartDetailSVC" />
+        <binding name="BasicHttpBinding_ImesProductionOrderSVC" />
+        <binding name="BasicHttpBinding_ImesProductStructureSVC" />
+        <binding name="BasicHttpBinding_ImesRouteSVC" />
+        <binding name="BasicHttpBinding_ImesRouteDetailSVC" />
+        <binding name="BasicHttpBinding_ImesRouteMachineMapSVC" />
+        <binding name="BasicHttpBinding_ImesRouteMapSVC" />
+        <binding name="BasicHttpBinding_ImesSerialNumberSVC" />
+        <binding name="BasicHttpBinding_ImesStationSVC" />
+        <binding name="BasicHttpBinding_ImesStationTypeSVC" />
+        <binding name="BasicHttpBinding_ImesUnitSVC" />
+        <binding name="BasicHttpBinding_ImesUnitComponentSVC" />
+        <binding name="BasicHttpBinding_ImesUnitStateSVC" />
+        <binding name="BasicHttpBinding_IsysStatusSVC" />
+        <binding name="BasicHttpBinding_IPartSelectSVC" />
+        <binding name="BasicHttpBinding_ImesSerialNumberOfLineSVC" />
+        <binding name="BasicHttpBinding_ImesUnitDefectSVC" />
+        <binding name="BasicHttpBinding_IluDefectSVC" />
+      </basicHttpBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://localhost:55368/Test1.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_ITest1" contract="Test1Service.ITest1"
+        name="BasicHttpBinding_ITest1" />
+      <endpoint address="http://localhost:55368/luApplicationType.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IluApplicationTypeSVC"
+        contract="luApplicationTypeService.IluApplicationTypeSVC" name="BasicHttpBinding_IluApplicationTypeSVC" />
+      <endpoint address="http://localhost:55368/luEmployeeGroup.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IluEmployeeGroupSVC"
+        contract="luEmployeeGroupService.IluEmployeeGroupSVC" name="BasicHttpBinding_IluEmployeeGroupSVC" />
+      <endpoint address="http://localhost:55368/luMachineFamily.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IluMachineFamilySVC"
+        contract="luMachineFamilyService.IluMachineFamilySVC" name="BasicHttpBinding_IluMachineFamilySVC" />
+      <endpoint address="http://localhost:55368/luMachineFamilyType.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IluMachineFamilyTypeSVC"
+        contract="luMachineFamilyTypeService.IluMachineFamilyTypeSVC"
+        name="BasicHttpBinding_IluMachineFamilyTypeSVC" />
+      <endpoint address="http://localhost:55368/luPartDetailDef.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IluPartDetailDefSVC"
+        contract="luPartDetailDefService.IluPartDetailDefSVC" name="BasicHttpBinding_IluPartDetailDefSVC" />
+      <endpoint address="http://localhost:55368/luPartFamily.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_IluPartFamilySVC" contract="luPartFamilyService.IluPartFamilySVC"
+        name="BasicHttpBinding_IluPartFamilySVC" />
+      <endpoint address="http://localhost:55368/luPartFamilyType.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IluPartFamilyTypeSVC"
+        contract="luPartFamilyTypeService.IluPartFamilyTypeSVC" name="BasicHttpBinding_IluPartFamilyTypeSVC" />
+      <endpoint address="http://localhost:55368/luSerialNumberType.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IluSerialNumberTypeSVC"
+        contract="luSerialNumberTypeService.IluSerialNumberTypeSVC"
+        name="BasicHttpBinding_IluSerialNumberTypeSVC" />
+      <endpoint address="http://localhost:55368/luUnitComponentType.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IluUnitComponentTypeSVC"
+        contract="luUnitComponentTypeService.IluUnitComponentTypeSVC"
+        name="BasicHttpBinding_IluUnitComponentTypeSVC" />
+      <endpoint address="http://localhost:55368/luUnitStatus.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_IluUnitStatusSVC" contract="luUnitStatusService.IluUnitStatusSVC"
+        name="BasicHttpBinding_IluUnitStatusSVC" />
+      <endpoint address="http://localhost:55368/mesEmployee.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_ImesEmployeeSVC" contract="mesEmployeeService.ImesEmployeeSVC"
+        name="BasicHttpBinding_ImesEmployeeSVC" />
+      <endpoint address="http://localhost:55368/mesHistory.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_ImesHistorySVC" contract="mesHistoryService.ImesHistorySVC"
+        name="BasicHttpBinding_ImesHistorySVC" />
+      <endpoint address="http://localhost:55368/mesMachine.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_ImesMachineSVC" contract="mesMachineService.ImesMachineSVC"
+        name="BasicHttpBinding_ImesMachineSVC" />
+      <endpoint address="http://localhost:55368/mesPart.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_ImesPartSVC" contract="mesPartService.ImesPartSVC"
+        name="BasicHttpBinding_ImesPartSVC" />
+      <endpoint address="http://localhost:55368/mesPartDetail.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ImesPartDetailSVC"
+        contract="mesPartDetailService.ImesPartDetailSVC" name="BasicHttpBinding_ImesPartDetailSVC" />
+      <endpoint address="http://localhost:55368/mesProductionOrder.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ImesProductionOrderSVC"
+        contract="mesProductionOrderService.ImesProductionOrderSVC"
+        name="BasicHttpBinding_ImesProductionOrderSVC" />
+      <endpoint address="http://localhost:55368/mesProductStructure.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ImesProductStructureSVC"
+        contract="mesProductStructureService.ImesProductStructureSVC"
+        name="BasicHttpBinding_ImesProductStructureSVC" />
+      <endpoint address="http://localhost:55368/mesRoute.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_ImesRouteSVC" contract="mesRouteService.ImesRouteSVC"
+        name="BasicHttpBinding_ImesRouteSVC" />
+      <endpoint address="http://localhost:55368/mesRouteDetail.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ImesRouteDetailSVC"
+        contract="mesRouteDetailService.ImesRouteDetailSVC" name="BasicHttpBinding_ImesRouteDetailSVC" />
+      <endpoint address="http://localhost:55368/mesRouteMachineMap.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ImesRouteMachineMapSVC"
+        contract="mesRouteMachineMapService.ImesRouteMachineMapSVC"
+        name="BasicHttpBinding_ImesRouteMachineMapSVC" />
+      <endpoint address="http://localhost:55368/mesRouteMap.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_ImesRouteMapSVC" contract="mesRouteMapService.ImesRouteMapSVC"
+        name="BasicHttpBinding_ImesRouteMapSVC" />
+      <endpoint address="http://localhost:55368/mesSerialNumber.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ImesSerialNumberSVC"
+        contract="mesSerialNumberService.ImesSerialNumberSVC" name="BasicHttpBinding_ImesSerialNumberSVC" />
+      <endpoint address="http://localhost:55368/mesStation.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_ImesStationSVC" contract="mesStationService.ImesStationSVC"
+        name="BasicHttpBinding_ImesStationSVC" />
+      <endpoint address="http://localhost:55368/mesStationType.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ImesStationTypeSVC"
+        contract="mesStationTypeService.ImesStationTypeSVC" name="BasicHttpBinding_ImesStationTypeSVC" />
+      <endpoint address="http://localhost:55368/mesUnit.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_ImesUnitSVC" contract="mesUnitService.ImesUnitSVC"
+        name="BasicHttpBinding_ImesUnitSVC" />
+      <endpoint address="http://localhost:55368/mesUnitComponent.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ImesUnitComponentSVC"
+        contract="mesUnitComponentService.ImesUnitComponentSVC" name="BasicHttpBinding_ImesUnitComponentSVC" />
+      <endpoint address="http://localhost:55368/mesUnitState.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_ImesUnitStateSVC" contract="mesUnitStateService.ImesUnitStateSVC"
+        name="BasicHttpBinding_ImesUnitStateSVC" />
+      <endpoint address="http://localhost:55368/sysStatus.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_IsysStatusSVC" contract="sysStatusService.IsysStatusSVC"
+        name="BasicHttpBinding_IsysStatusSVC" />
+      <endpoint address="http://localhost:55368/PartSelectSVC.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPartSelectSVC"
+        contract="PartSelectService.IPartSelectSVC" name="BasicHttpBinding_IPartSelectSVC" />
+      <endpoint address="http://localhost:55368/mesSerialNumberOfLineSVC.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ImesSerialNumberOfLineSVC"
+        contract="mesSerialNumberOfLineService.ImesSerialNumberOfLineSVC"
+        name="BasicHttpBinding_ImesSerialNumberOfLineSVC" />
+      <endpoint address="http://localhost:55368/mesUnitDefect.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ImesUnitDefectSVC"
+        contract="mesUnitDefectService.ImesUnitDefectSVC" name="BasicHttpBinding_ImesUnitDefectSVC" />
+      <endpoint address="http://localhost:55368/luDefect.svc" binding="basicHttpBinding"
+        bindingConfiguration="BasicHttpBinding_IluDefectSVC" contract="luDefectService.IluDefectSVC"
+        name="BasicHttpBinding_IluDefectSVC" />
+    </client>
+  </system.serviceModel>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+      </providers>
+    </roleManager>
+  </system.web>
+</configuration>

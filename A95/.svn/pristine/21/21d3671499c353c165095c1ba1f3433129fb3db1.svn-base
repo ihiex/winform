@@ -1,0 +1,1713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A68F2B1F-7E55-45EE-8F42-FA97B2C73F32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>App.MyMES</RootNamespace>
+    <AssemblyName>COSMOMES</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>\\192.168.1.248\d%24\MES_Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://192.168.1.248:888/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>COSMO400.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D3D6C4958F7D4252003544968EFFD6F6F766F002</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MES_Key.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ToolingAssemble_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assemble_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assemble_Form.Designer.cs">
+      <DependentUpon>Assemble_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BoxLinkBatch_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoxLinkBatch_Form.Designer.cs">
+      <DependentUpon>BoxLinkBatch_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BoxPackage_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoxPackage_Form.Designer.cs">
+      <DependentUpon>BoxPackage_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luApplicationTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luDefectService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luEmployeeGroupService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luMachineFamilyService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luMachineFamilyTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luPartDetailDefService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luPartFamilyService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luPartFamilyTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luSerialNumberTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luUnitComponentTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\luUnitStatusService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesEmployeeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesHistoryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesMachineService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesPackageService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesPartDetailService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesPartService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesProductionOrderService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesProductStructureService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesRouteDetailService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesRouteMachineMapService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesRouteMapService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesRouteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesSerialNumberOfLineService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesSerialNumberService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesStationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesStationTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesUnitComponentService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesUnitDefectService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesUnitDetailService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesUnitService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mesUnitStateService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PartSelectService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceHostingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\sysStatusService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DefectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DefectForm.Designer.cs">
+      <DependentUpon>DefectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interlock_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interlock_Form.designer.cs">
+      <DependentUpon>Interlock_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabelForm.Designer.cs">
+      <DependentUpon>LabelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Labels\MESLabel\Add.cs" />
+    <Compile Include="Labels\MESLabel\ApplyMap.cs" />
+    <Compile Include="Labels\MESLabel\Bool.cs" />
+    <Compile Include="Labels\MESLabel\Centry.cs" />
+    <Compile Include="Labels\MESLabel\Day.cs" />
+    <Compile Include="Labels\MESLabel\DayOfYear.cs" />
+    <Compile Include="Labels\MESLabel\DecToHex.cs" />
+    <Compile Include="Labels\MESLabel\DecToOct.cs" />
+    <Compile Include="Labels\MESLabel\Div.cs" />
+    <Compile Include="Labels\MESLabel\HexToDec.cs" />
+    <Compile Include="Labels\MESLabel\Hour12.cs" />
+    <Compile Include="Labels\MESLabel\Hour24.cs" />
+    <Compile Include="Labels\MESLabel\If.cs" />
+    <Compile Include="Labels\MESLabel\Left.cs" />
+    <Compile Include="Labels\MESLabel\Len.cs" />
+    <Compile Include="Labels\MESLabel\MESDBFTable.cs" />
+    <Compile Include="Labels\MESLabel\MESFuncObject.cs" />
+    <Compile Include="Labels\MESLabel\MESFuncObjFactory.cs" />
+    <Compile Include="Labels\MESLabel\MESLabel.cs" />
+    <Compile Include="Labels\MESLabel\MESLBLException.cs" />
+    <Compile Include="Labels\MESLabel\MESParser.cs" />
+    <Compile Include="Labels\MESLabel\MESScaner.cs" />
+    <Compile Include="Labels\MESLabel\Minute.cs" />
+    <Compile Include="Labels\MESLabel\Mod.cs" />
+    <Compile Include="Labels\MESLabel\Month.cs" />
+    <Compile Include="Labels\MESLabel\Multiply.cs" />
+    <Compile Include="Labels\MESLabel\OctToDec.cs" />
+    <Compile Include="Labels\MESLabel\PageCount.cs" />
+    <Compile Include="Labels\MESLabel\PageNumber.cs" />
+    <Compile Include="Labels\MESLabel\PrinterName.cs" />
+    <Compile Include="Labels\MESLabel\Right.cs" />
+    <Compile Include="Labels\MESLabel\SourceFilePath.cs" />
+    <Compile Include="Labels\MESLabel\Subst.cs" />
+    <Compile Include="Labels\MESLabel\Substr.cs" />
+    <Compile Include="Labels\MESLabel\WeekOfYear.cs" />
+    <Compile Include="Labels\MESLabel\Year.cs" />
+    <Compile Include="Labels\MESLabel\YearOfManWeek.cs" />
+    <Compile Include="Labels\WdProtocolNet\LPSClient.cs" />
+    <Compile Include="Labels\WdProtocolNet\modByteFunctions.cs" />
+    <Compile Include="Lamination_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lamination_Form.Designer.cs">
+      <DependentUpon>Lamination_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkBatch_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkBatch_Form.Designer.cs">
+      <DependentUpon>LinkBatch_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkUPC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkUPC_Form.Designer.cs">
+      <DependentUpon>LinkUPC_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogNet.cs" />
+    <Compile Include="MES_Dev2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MES_Dev2_Form.Designer.cs">
+      <DependentUpon>MES_Dev2_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MES_Dev_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MES_Dev_Form.Designer.cs">
+      <DependentUpon>MES_Dev_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MES_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MES_Form.Designer.cs">
+      <DependentUpon>MES_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultiColumnComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyINI.cs" />
+    <Compile Include="OverStation_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverStation_Form.designer.cs">
+      <DependentUpon>OverStation_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolingAssemble_Form.Designer.cs">
+      <DependentUpon>ToolingAssemble_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolingQCNGPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolingQCNGPrint.Designer.cs">
+      <DependentUpon>ToolingQCNGPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolingQCPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolingOverStation_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolingOverStation_Form.Designer.cs">
+      <DependentUpon>ToolingOverStation_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PalletPackage_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PalletPackage_Form.designer.cs">
+      <DependentUpon>PalletPackage_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartSelectForm.Designer.cs">
+      <DependentUpon>PartSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IQCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IQCForm.Designer.cs">
+      <DependentUpon>IQCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlasmaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlasmaForm.Designer.cs">
+      <DependentUpon>PlasmaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PO_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PO_Form.Designer.cs">
+      <DependentUpon>PO_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintSNForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintSNForm.Designer.cs">
+      <DependentUpon>PrintSNForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintSNForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintSNForm2.Designer.cs">
+      <DependentUpon>PrintSNForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintSNOffline_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintSNOffline_Form.Designer.cs">
+      <DependentUpon>PrintSNOffline_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintSN_UPC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintSN_UPC_Form.Designer.cs">
+      <DependentUpon>PrintSN_UPC_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public_.cs" />
+    <Compile Include="ScanerHook.cs" />
+    <Compile Include="Search_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Form.Designer.cs">
+      <DependentUpon>Search_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Select_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select_Form.Designer.cs">
+      <DependentUpon>Select_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerClientFactory\IluApplicationTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\IluDefectFactory.cs" />
+    <Compile Include="ServerClientFactory\IluEmployeeGroupFactory.cs" />
+    <Compile Include="ServerClientFactory\IluMachineFamilyFactory.cs" />
+    <Compile Include="ServerClientFactory\IluMachineFamilyTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\IluPartDetailDefFactory.cs" />
+    <Compile Include="ServerClientFactory\IluPartFamilyFactory.cs" />
+    <Compile Include="ServerClientFactory\IluPartFamilyTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\IluSerialNumberTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\IluUnitComponentTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\IluUnitStatusFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesEmployeeFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesHistoryFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesMachineFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesPackageFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesPartDetailFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesPartFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesProductionOrderFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesProductStructureFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesRouteDetailFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesRouteFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesRouteMachineMapFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesRouteMapFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesSerialNumberFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesSerialNumberOfLineSVCFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesStationFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesStationTypeFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesUnitComponentFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesUnitDefectFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesUnitDetailFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesUnitFactory.cs" />
+    <Compile Include="ServerClientFactory\ImesUnitStateFactory.cs" />
+    <Compile Include="ServerClientFactory\IServiceHostingFactory.cs" />
+    <Compile Include="ServerClientFactory\IsysStatusFactory.cs" />
+    <Compile Include="ServerClientFactory\PartSelectFactory.cs" />
+    <Compile Include="ToolingLinkTooling_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolingLinkTooling_Form.Designer.cs">
+      <DependentUpon>ToolingLinkTooling_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolingQCPrint.Designer.cs">
+      <DependentUpon>ToolingQCPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tooling_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tooling_Form.Designer.cs">
+      <DependentUpon>Tooling_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T_Form.Designer.cs">
+      <DependentUpon>T_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitReplaceTool_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitReplaceTool_Form.designer.cs">
+      <DependentUpon>UnitReplaceTool_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WcfInvokeFactory.cs" />
+    <Compile Include="WebP.cs" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="ToolingAssemble_Form.resx">
+      <DependentUpon>ToolingAssemble_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assemble_Form.resx">
+      <DependentUpon>Assemble_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoxLinkBatch_Form.resx">
+      <DependentUpon>BoxLinkBatch_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoxPackage_Form.resx">
+      <DependentUpon>BoxPackage_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefectForm.resx">
+      <DependentUpon>DefectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interlock_Form.resx">
+      <DependentUpon>Interlock_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabelForm.resx">
+      <DependentUpon>LabelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lamination_Form.resx">
+      <DependentUpon>Lamination_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkBatch_Form.resx">
+      <DependentUpon>LinkBatch_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkUPC_Form.resx">
+      <DependentUpon>LinkUPC_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MES_Dev2_Form.resx">
+      <DependentUpon>MES_Dev2_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MES_Dev_Form.resx">
+      <DependentUpon>MES_Dev_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MES_Form.resx">
+      <DependentUpon>MES_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverStation_Form.resx">
+      <DependentUpon>OverStation_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolingQCNGPrint.resx">
+      <DependentUpon>ToolingQCNGPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolingQCPrint.resx">
+      <DependentUpon>ToolingQCPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolingOverStation_Form.resx">
+      <DependentUpon>ToolingOverStation_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PalletPackage_Form.resx">
+      <DependentUpon>PalletPackage_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartSelectForm.resx">
+      <DependentUpon>PartSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IQCForm.resx">
+      <DependentUpon>IQCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlasmaForm.resx">
+      <DependentUpon>PlasmaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PO_Form.resx">
+      <DependentUpon>PO_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintSNForm.resx">
+      <DependentUpon>PrintSNForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintSNForm2.resx">
+      <DependentUpon>PrintSNForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintSNOffline_Form.resx">
+      <DependentUpon>PrintSNOffline_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintSN_UPC_Form.resx">
+      <DependentUpon>PrintSN_UPC_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Search_Form.resx">
+      <DependentUpon>Search_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select_Form.resx">
+      <DependentUpon>Select_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolingLinkTooling_Form.resx">
+      <DependentUpon>ToolingLinkTooling_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tooling_Form.resx">
+      <DependentUpon>Tooling_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T_Form.resx">
+      <DependentUpon>T_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitReplaceTool_Form.resx">
+      <DependentUpon>UnitReplaceTool_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\luApplicationTypeService\luApplicationType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luApplicationTypeService\luApplicationType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luApplicationTypeService\luApplicationType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luApplicationTypeService\luApplicationTypeSVC.wsdl" />
+    <None Include="Connected Services\luDefectService\luDefect.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luDefectService\luDefect1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luDefectService\luDefect2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luDefectService\luDefectSVC.wsdl" />
+    <None Include="Connected Services\luEmployeeGroupService\luEmployeeGroup.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luEmployeeGroupService\luEmployeeGroup1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luEmployeeGroupService\luEmployeeGroup2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luEmployeeGroupService\luEmployeeGroupSVC.wsdl" />
+    <None Include="Connected Services\luMachineFamilyService\luMachineFamily.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyService\luMachineFamily1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyService\luMachineFamily2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyService\luMachineFamilySVC.wsdl" />
+    <None Include="Connected Services\luMachineFamilyTypeService\luMachineFamilyType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyTypeService\luMachineFamilyType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyTypeService\luMachineFamilyType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luMachineFamilyTypeService\luMachineFamilyTypeSVC.wsdl" />
+    <None Include="Connected Services\luPartDetailDefService\luPartDetailDef.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartDetailDefService\luPartDetailDef1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartDetailDefService\luPartDetailDef2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartDetailDefService\luPartDetailDefSVC.wsdl" />
+    <None Include="Connected Services\luPartFamilyService\luPartFamily.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyService\luPartFamily1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyService\luPartFamily2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyService\luPartFamilySVC.wsdl" />
+    <None Include="Connected Services\luPartFamilyTypeService\luPartFamilyType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyTypeService\luPartFamilyType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyTypeService\luPartFamilyType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luPartFamilyTypeService\luPartFamilyTypeSVC.wsdl" />
+    <None Include="Connected Services\luSerialNumberTypeService\luSerialNumberType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luSerialNumberTypeService\luSerialNumberType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luSerialNumberTypeService\luSerialNumberType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luSerialNumberTypeService\luSerialNumberTypeSVC.wsdl" />
+    <None Include="Connected Services\luUnitComponentTypeService\luUnitComponentType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitComponentTypeService\luUnitComponentType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitComponentTypeService\luUnitComponentType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitComponentTypeService\luUnitComponentTypeSVC.wsdl" />
+    <None Include="Connected Services\luUnitStatusService\luUnitStatus.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitStatusService\luUnitStatus1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitStatusService\luUnitStatus2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\luUnitStatusService\luUnitStatusSVC.wsdl" />
+    <None Include="Connected Services\mesEmployeeService\mesEmployee.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesEmployeeService\mesEmployee1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesEmployeeService\mesEmployee2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesEmployeeService\mesEmployeeSVC.wsdl" />
+    <None Include="Connected Services\mesHistoryService\mesHistory.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesHistoryService\mesHistory1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesHistoryService\mesHistory2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesHistoryService\mesHistorySVC.wsdl" />
+    <None Include="Connected Services\mesMachineService\mesMachine.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMachineService\mesMachine1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMachineService\mesMachine2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMachineService\mesMachine3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesMachineService\mesMachineSVC.wsdl" />
+    <None Include="Connected Services\mesPackageService\mesPackage.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPackageService\mesPackage1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPackageService\mesPackage2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPackageService\mesPackageSVC.wsdl" />
+    <None Include="Connected Services\mesPartDetailService\mesPartDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartDetailService\mesPartDetail1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartDetailService\mesPartDetail2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartDetailService\mesPartDetailSVC.wsdl" />
+    <None Include="Connected Services\mesPartService\mesPart.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartService\mesPart1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartService\mesPart2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesPartService\mesPartSVC.wsdl" />
+    <None Include="Connected Services\mesProductionOrderService\mesProductionOrder.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductionOrderService\mesProductionOrder1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductionOrderService\mesProductionOrder2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductionOrderService\mesProductionOrderSVC.wsdl" />
+    <None Include="Connected Services\mesProductStructureService\mesProductStructure.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductStructureService\mesProductStructure1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductStructureService\mesProductStructure2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesProductStructureService\mesProductStructureSVC.wsdl" />
+    <None Include="Connected Services\mesRouteDetailService\mesRouteDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteDetailService\mesRouteDetail1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteDetailService\mesRouteDetail2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteDetailService\mesRouteDetailSVC.wsdl" />
+    <None Include="Connected Services\mesRouteMachineMapService\mesRouteMachineMap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMachineMapService\mesRouteMachineMap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMachineMapService\mesRouteMachineMap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMachineMapService\mesRouteMachineMapSVC.wsdl" />
+    <None Include="Connected Services\mesRouteMapService\mesRouteMap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMapService\mesRouteMap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMapService\mesRouteMap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMapService\mesRouteMap3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteMapService\mesRouteMapSVC.wsdl" />
+    <None Include="Connected Services\mesRouteService\mesRoute.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteService\mesRoute1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteService\mesRoute2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesRouteService\mesRouteSVC.wsdl" />
+    <None Include="Connected Services\mesSerialNumberOfLineService\mesSerialNumberOfLineSVC.wsdl" />
+    <None Include="Connected Services\mesSerialNumberOfLineService\mesSerialNumberOfLineSVC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberOfLineService\mesSerialNumberOfLineSVC1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberOfLineService\mesSerialNumberOfLineSVC2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberService\mesSerialNumber.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberService\mesSerialNumber1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberService\mesSerialNumber2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesSerialNumberService\mesSerialNumberSVC.wsdl" />
+    <None Include="Connected Services\mesStationService\mesStation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationService\mesStation1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationService\mesStation2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationService\mesStationSVC.wsdl" />
+    <None Include="Connected Services\mesStationTypeService\mesStationType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationTypeService\mesStationType1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationTypeService\mesStationType2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesStationTypeService\mesStationTypeSVC.wsdl" />
+    <None Include="Connected Services\mesUnitComponentService\mesUnitComponent.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitComponentService\mesUnitComponent1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitComponentService\mesUnitComponent2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitComponentService\mesUnitComponentSVC.wsdl" />
+    <None Include="Connected Services\mesUnitDefectService\mesUnitDefect.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDefectService\mesUnitDefect1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDefectService\mesUnitDefect2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDefectService\mesUnitDefectSVC.wsdl" />
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetail1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetail2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetail3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetailSVC.wsdl" />
+    <None Include="Connected Services\mesUnitService\mesUnit.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitService\mesUnit1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitService\mesUnit2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitService\mesUnitSVC.wsdl" />
+    <None Include="Connected Services\mesUnitStateService\mesUnitState.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitStateService\mesUnitState1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitStateService\mesUnitState2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\mesUnitStateService\mesUnitStateSVC.wsdl" />
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.BoxSnToBatchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.Get_CreateMesSNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.Get_CreatePackageSNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.Get_SearchDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\App.MyMES.PartSelectService.uspCallProcedureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC.wsdl" />
+    <None Include="Connected Services\PartSelectService\PartSelectSVC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceHostingService\ServiceHosting.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceHostingService\ServiceHosting1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceHostingService\ServiceHostingSVC.wsdl" />
+    <None Include="Connected Services\sysStatusService\sysStatus.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\sysStatusService\sysStatus1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\sysStatusService\sysStatus2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\sysStatusService\sysStatusSVC.wsdl" />
+    <None Include="MES_Key.pfx" />
+    <None Include="Properties\DataSources\App.Model.luApplicationType.datasource" />
+    <None Include="Properties\DataSources\App.Model.luDefect.datasource" />
+    <None Include="Properties\DataSources\App.Model.luEmployeeGroup.datasource" />
+    <None Include="Properties\DataSources\App.Model.luMachineFamily.datasource" />
+    <None Include="Properties\DataSources\App.Model.luMachineFamilyType.datasource" />
+    <None Include="Properties\DataSources\App.Model.luPartDetailDef.datasource" />
+    <None Include="Properties\DataSources\App.Model.luPartFamily.datasource" />
+    <None Include="Properties\DataSources\App.Model.luPartFamilyType.datasource" />
+    <None Include="Properties\DataSources\App.Model.luSerialNumberType.datasource" />
+    <None Include="Properties\DataSources\App.Model.luUnitComponentType.datasource" />
+    <None Include="Properties\DataSources\App.Model.luUnitStatus.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesEmployee.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesHistory.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesMachine.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesPackage.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesPart.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesPartDetail.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesProductionOrder.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesProductStructure.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesRoute.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesRouteDetail.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesRouteMachineMap.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesRouteMap.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesSerialNumber.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesSerialNumberOfLine.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesStation.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesStationType.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesUnit.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesUnitComponent.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesUnitDefect.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesUnitDetail.datasource" />
+    <None Include="Properties\DataSources\App.Model.mesUnitState.datasource" />
+    <None Include="Properties\DataSources\App.Model.sysStatus.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\luApplicationTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\luDefectService\" />
+    <WCFMetadataStorage Include="Connected Services\luEmployeeGroupService\" />
+    <WCFMetadataStorage Include="Connected Services\luMachineFamilyService\" />
+    <WCFMetadataStorage Include="Connected Services\luMachineFamilyTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\luPartDetailDefService\" />
+    <WCFMetadataStorage Include="Connected Services\luPartFamilyService\" />
+    <WCFMetadataStorage Include="Connected Services\luPartFamilyTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\luSerialNumberTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\luUnitComponentTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\luUnitStatusService\" />
+    <WCFMetadataStorage Include="Connected Services\mesEmployeeService\" />
+    <WCFMetadataStorage Include="Connected Services\mesHistoryService\" />
+    <WCFMetadataStorage Include="Connected Services\mesMachineService\" />
+    <WCFMetadataStorage Include="Connected Services\mesPackageService\" />
+    <WCFMetadataStorage Include="Connected Services\mesPartDetailService\" />
+    <WCFMetadataStorage Include="Connected Services\mesPartService\" />
+    <WCFMetadataStorage Include="Connected Services\mesProductionOrderService\" />
+    <WCFMetadataStorage Include="Connected Services\mesProductStructureService\" />
+    <WCFMetadataStorage Include="Connected Services\mesRouteDetailService\" />
+    <WCFMetadataStorage Include="Connected Services\mesRouteMachineMapService\" />
+    <WCFMetadataStorage Include="Connected Services\mesRouteMapService\" />
+    <WCFMetadataStorage Include="Connected Services\mesRouteService\" />
+    <WCFMetadataStorage Include="Connected Services\mesSerialNumberOfLineService\" />
+    <WCFMetadataStorage Include="Connected Services\mesSerialNumberService\" />
+    <WCFMetadataStorage Include="Connected Services\mesStationService\" />
+    <WCFMetadataStorage Include="Connected Services\mesStationTypeService\" />
+    <WCFMetadataStorage Include="Connected Services\mesUnitComponentService\" />
+    <WCFMetadataStorage Include="Connected Services\mesUnitDefectService\" />
+    <WCFMetadataStorage Include="Connected Services\mesUnitDetailService\" />
+    <WCFMetadataStorage Include="Connected Services\mesUnitService\" />
+    <WCFMetadataStorage Include="Connected Services\mesUnitStateService\" />
+    <WCFMetadataStorage Include="Connected Services\PartSelectService\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceHostingService\" />
+    <WCFMetadataStorage Include="Connected Services\sysStatusService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luApplicationTypeService\luApplicationType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luApplicationTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luApplicationTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luApplicationTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luEmployeeGroupService\luEmployeeGroup.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luEmployeeGroupService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luEmployeeGroupService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luEmployeeGroupService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyService\luMachineFamily.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyTypeService\luMachineFamilyType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luMachineFamilyTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartDetailDefService\luPartDetailDef.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartDetailDefService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartDetailDefService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartDetailDefService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyService\luPartFamily.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyTypeService\luPartFamilyType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luPartFamilyTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luSerialNumberTypeService\luSerialNumberType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luSerialNumberTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luSerialNumberTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luSerialNumberTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitComponentTypeService\luUnitComponentType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitComponentTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitComponentTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitComponentTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitStatusService\luUnitStatus.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitStatusService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitStatusService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\luUnitStatusService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesEmployeeService\mesEmployee.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesEmployeeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesEmployeeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesEmployeeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesHistoryService\mesHistory.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesHistoryService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesHistoryService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesHistoryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesMachineService\mesMachine.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesMachineService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesMachineService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesMachineService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartService\mesPart.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartDetailService\mesPartDetail.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartDetailService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartDetailService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesPartDetailService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductionOrderService\mesProductionOrder.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductionOrderService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductionOrderService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductionOrderService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductStructureService\mesProductStructure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductStructureService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductStructureService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesProductStructureService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteService\mesRoute.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteDetailService\mesRouteDetail.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteDetailService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteDetailService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteDetailService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMachineMapService\mesRouteMachineMap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMachineMapService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMachineMapService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMachineMapService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMapService\mesRouteMap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMapService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMapService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesRouteMapService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberService\mesSerialNumber.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationService\mesStation.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationTypeService\mesStationType.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationTypeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationTypeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesStationTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitService\mesUnit.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitComponentService\mesUnitComponent.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitComponentService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitComponentService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitComponentService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitStateService\mesUnitState.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitStateService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitStateService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitStateService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sysStatusService\sysStatus.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sysStatusService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sysStatusService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sysStatusService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PartSelectService\PartSelectSVC.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PartSelectService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PartSelectService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PartSelectService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\270.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="LabelManager2">
+      <Guid>{3624B9C2-9E5D-11D3-A896-00C04F324E22}</Guid>
+      <VersionMajor>18</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberOfLineService\mesSerialNumberOfLineSVC.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberOfLineService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberOfLineService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesSerialNumberOfLineService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mesUnitDefectService\mesUnitDefect.disco" />
+    <None Include="Connected Services\mesUnitDefectService\configuration91.svcinfo" />
+    <None Include="Connected Services\mesUnitDefectService\configuration.svcinfo" />
+    <None Include="Connected Services\mesUnitDefectService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\luDefectService\luDefect.disco" />
+    <None Include="Connected Services\luDefectService\configuration91.svcinfo" />
+    <None Include="Connected Services\luDefectService\configuration.svcinfo" />
+    <None Include="Connected Services\luDefectService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\mesUnitDetailService\mesUnitDetail.disco" />
+    <None Include="Connected Services\mesUnitDetailService\configuration91.svcinfo" />
+    <None Include="Connected Services\mesUnitDetailService\configuration.svcinfo" />
+    <None Include="Connected Services\mesUnitDetailService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceHostingService\ServiceHosting.disco" />
+    <None Include="Connected Services\ServiceHostingService\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceHostingService\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceHostingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\mesPackageService\mesPackage.disco" />
+    <None Include="Connected Services\mesPackageService\configuration91.svcinfo" />
+    <None Include="Connected Services\mesPackageService\configuration.svcinfo" />
+    <None Include="Connected Services\mesPackageService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="bin\Debug\Sounds\NG.wav" />
+    <None Include="bin\Debug\Sounds\OK.wav" />
+    <Content Include="COSMO400.ico" />
+    <Content Include="Sounds\NG.wav" />
+    <Content Include="Sounds\OK.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Model\App.Model.csproj">
+      <Project>{ca5c3bfc-f857-4c08-9793-a14dcd99fbd9}</Project>
+      <Name>App.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GZipEncoder\GZipEncoder.csproj">
+      <Project>{3eb736c4-62ea-4887-b040-948b13ef29b9}</Project>
+      <Name>GZipEncoder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecurityWcf.Core\SecurityWcf.Core.csproj">
+      <Project>{df6d3938-6866-41e1-b1c9-fdb39da8e045}</Project>
+      <Name>SecurityWcf.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

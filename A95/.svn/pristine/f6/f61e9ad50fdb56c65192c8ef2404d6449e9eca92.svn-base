@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="72839705-1ef4-4279-87ea-6379bb5560d0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/Siemens/Siemens.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Siemens.xsd" MetadataType="Schema" ID="fa4ad416-28d0-48a0-a645-00adbd20e613" SourceId="1" SourceUrl="http://localhost:55368/Siemens/Siemens.svc?xsd=xsd2" />
+    <MetadataFile FileName="Siemens1.xsd" MetadataType="Schema" ID="24f6a259-cd8d-4bea-8056-ab81d4ff005f" SourceId="1" SourceUrl="http://localhost:55368/Siemens/Siemens.svc?xsd=xsd1" />
+    <MetadataFile FileName="Siemens.disco" MetadataType="Disco" ID="3c420c11-de7d-4c94-969c-cdfbee24cdc8" SourceId="1" SourceUrl="http://localhost:55368/Siemens/Siemens.svc?disco" />
+    <MetadataFile FileName="SiemensSVC.wsdl" MetadataType="Wsdl" ID="d8fe0b4f-e870-43f5-8a1c-675b661e1faa" SourceId="1" SourceUrl="http://localhost:55368/Siemens/Siemens.svc?wsdl" />
+    <MetadataFile FileName="Siemens2.xsd" MetadataType="Schema" ID="995c4b25-dfaf-47a9-a134-466f3bd74467" SourceId="1" SourceUrl="http://localhost:55368/Siemens/Siemens.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WHIn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_MPN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_BoxSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WHInResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WHInResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WHIn_DT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_BoxSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WHIn_DTResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WHIn_DTResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WHOut">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_MPN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_BillNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_BoxSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WHOutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WHOutResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WHOut_DT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_BoxSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WHOut_DTResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WHOut_DTResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpad_BB">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpad_BBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetIpad_BBResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckBillNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_BillNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckBillNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckBillNoResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="S_Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_Start" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_End" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetShipmentResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipmentEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_FInterID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipmentEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetShipmentEntryResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipmentReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_Start" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_End" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipmentReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetShipmentReportResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Edit_CO_WH_Shipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_FInterID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_ShipDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_HAWB" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_PalletSeq" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_PalletCount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_GrossWeight" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_EmptyCarton" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_ShipNO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_Project" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Edit_CO_WH_ShipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Edit_CO_WH_ShipmentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteShipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FInterID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteShipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteShipmentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteShipmentEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FDetailID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteShipmentEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteShipmentEntryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMultiSelectShipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FInterID_List" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMultiSelectShipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMultiSelectShipmentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShipment_FStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FInterID_List" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShipment_FStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateShipment_FStatusResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipment_One">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FInterID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipment_OneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetShipment_OneResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipmentEntry_One">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FDetailID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShipmentEntry_OneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetShipmentEntry_OneResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Edit_CO_WH_ShipmentEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_FInterID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_FEntryID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_FDetailID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_FKPONO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_FMPNNO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_FCTN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_FStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_Type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Edit_CO_WH_ShipmentEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Edit_CO_WH_ShipmentEntryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecSql">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_Sql" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecSqlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExecSqlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Data_Set">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_Sql" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="S_StationTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Data_SetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Data_SetResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

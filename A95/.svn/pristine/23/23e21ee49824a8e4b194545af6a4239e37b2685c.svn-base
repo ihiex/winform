@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a7b6a7b9-82ca-435c-b6aa-04ce07e8d727" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/luApplicationType.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="luApplicationType.disco" MetadataType="Disco" ID="8ba5d3c6-a92a-4c11-a948-a1b8cb0b6e2a" SourceId="1" SourceUrl="http://localhost:55368/luApplicationType.svc?disco" />
+    <MetadataFile FileName="luApplicationType.xsd" MetadataType="Schema" ID="833b9b50-0a2a-45fd-819a-0883faafc243" SourceId="1" SourceUrl="http://localhost:55368/luApplicationType.svc?xsd=xsd0" />
+    <MetadataFile FileName="luApplicationType1.xsd" MetadataType="Schema" ID="65a7a160-abab-4404-8dfb-d556e0fa1ba6" SourceId="1" SourceUrl="http://localhost:55368/luApplicationType.svc?xsd=xsd2" />
+    <MetadataFile FileName="luApplicationTypeSVC.wsdl" MetadataType="Wsdl" ID="6c9fb0af-1036-478f-add1-7d95e05e235b" SourceId="1" SourceUrl="http://localhost:55368/luApplicationType.svc?wsdl" />
+    <MetadataFile FileName="luApplicationType2.xsd" MetadataType="Schema" ID="20353590-c5f5-4f32-98d6-ebae9f539d27" SourceId="1" SourceUrl="http://localhost:55368/luApplicationType.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,22 @@
+2020-03-18 13:57  2020-03-18 13:57:16 ： System.IO.IOException: 端口“COM7”不存在。
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   在 System.IO.Ports.SerialPort.Open()
+   在 App.MyMES.Interlock_Form.RunPLC(String S_CommandPLC) 位置 E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.MyMES\Interlock_Form.cs:行号 876
+
+2020-03-18 13:57  2020-03-18 13:57:19 ： System.IO.IOException: 端口“COM7”不存在。
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   在 System.IO.Ports.SerialPort.Open()
+   在 App.MyMES.Interlock_Form.RunPLC(String S_CommandPLC) 位置 E:\2-MyCode\A01\A01_Win\A01_Win_Dev\App.MyMES\Interlock_Form.cs:行号 876
+
+2020-03-18 13:57  2020-03-18 13:57:42 ： System.IndexOutOfRangeException: 在位置 0 处没有任何行。
+   在 System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   在 System.Data.DataRowCollection.get_Item(Int32 index)
+   在 App.DBServerDAL.PartSelectDAL.GetRouteCheck(Int32 Scan_StationTypeID, Int32 Scan_StationID, String LineID, DataTable DT_Unit, String S_Str) 位置 E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\App.DBServerDAL\PartSelectDAL.cs:行号 729
+
+2020-03-18 13:58  2020-03-18 13:58:17 ： System.IndexOutOfRangeException: 在位置 0 处没有任何行。
+   在 System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   在 System.Data.DataRowCollection.get_Item(Int32 index)
+   在 App.DBServerDAL.PartSelectDAL.GetRouteCheck(Int32 Scan_StationTypeID, Int32 Scan_StationID, String LineID, DataTable DT_Unit, String S_Str) 位置 E:\lomo.xu\work\A01\A01_New\A01_Win_Dev\App.DBServerDAL\PartSelectDAL.cs:行号 729
+

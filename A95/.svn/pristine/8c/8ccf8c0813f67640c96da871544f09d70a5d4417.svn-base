@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  有关如何配置 ASP.NET 应用程序的详细信息，请访问
+  https://go.microsoft.com/fwlink/?LinkId=169433
+-->
+<configuration>
+  <!--
+    有关 web.config 更改的说明，请参见 http://go.microsoft.com/fwlink/?LinkId=235367。
+
+    可在 <httpRuntime> 标记上设置以下特性。
+      <system.Web>
+        <httpRuntime targetFramework="4.5" />
+      </system.Web>
+  -->
+  <system.web>
+    <compilation debug="true" targetFramework="4.5.1"/>
+    <httpRuntime targetFramework="4.5"/>
+  </system.web>
+  
+  <appSettings>
+    <add key="WebDAL" value="App.DBServerDAL"/>
+    
+    <add key="ServiceCertificate" value="~/config/COServer.pfx"/>
+    <add key="ServiceCertificatePassword" value="QSCwdvEFBrgnTHMyj,@2019"/>
+    <add key="EnableServiceCertificate" value="true"/>
+    <add key="ClientCertificate" value="~/config/COClient.cer"/>
+    <add key="OpenLogFile" value="Y" />
+    
+  </appSettings>
+  <connectionStrings>
+    <add name="SqlServerHelper" connectionString="Data Source=192.168.1.248,6688;Initial Catalog=MES_A01;Persist Security Info=True;User ID=sa;Password=z@123456" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+  
+  <system.serviceModel>
+    <services>
+
+      <service name="luApplicationTypeSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IluApplicationTypeSVC" />
+      </service>
+      <service name="luEmployeeGroupSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IluEmployeeGroupSVC" />
+      </service>
+      <service name="luMachineFamilySVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IluMachineFamilySVC" />
+      </service>
+      <service name="luMachineFamilyTypeSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IluMachineFamilyTypeSVC" />
+      </service>
+      <service name="luPartDetailDefSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IluPartDetailDefSVC" />
+      </service>
+      <service name="luPartFamilySVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IluPartFamilySVC" />
+      </service>
+      <service name="luPartFamilyTypeSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IluPartFamilyTypeSVC" />
+      </service>
+      <service name="luSerialNumberTypeSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IluSerialNumberTypeSVC" />
+      </service>
+      <service name="luUnitComponentTypeSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IluUnitComponentTypeSVC" />
+      </service>
+      <service name="luUnitStatusSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IluUnitStatusSVC" />
+      </service>
+      <service name="mesEmployeeSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesEmployeeSVC" />
+      </service>
+      <service name="mesHistorySVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesHistorySVC" />
+      </service>
+      <service name="mesMachineSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesMachineSVC" />
+      </service>
+      <service name="mesPartSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesPartSVC" />
+      </service>
+      <service name="mesPartDetailSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesPartDetailSVC" />
+      </service>
+      <service name="mesProductionOrderSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesProductionOrderSVC" />
+      </service>
+      <service name="mesProductStructureSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesProductStructureSVC" />
+      </service>
+      <service name="mesRouteSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesRouteSVC" />
+      </service>
+      <service name="mesRouteDetailSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesRouteDetailSVC" />
+      </service>
+      <service name="mesRouteMachineMapSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesRouteMachineMapSVC" />
+      </service>
+      <service name="mesRouteMapSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesRouteMapSVC" />
+      </service>
+      <service name="mesSerialNumberSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesSerialNumberSVC" />
+      </service>
+      <service name="mesStationSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesStationSVC" />
+      </service>
+      <service name="mesStationTypeSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesStationTypeSVC" />
+      </service>
+      <service name="mesUnitSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesUnitSVC" />
+      </service>
+      <service name="mesUnitComponentSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesUnitComponentSVC" />
+      </service>
+      <service name="mesUnitStateSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesUnitStateSVC" />
+      </service>
+      <service name="sysStatusSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IsysStatusSVC" />
+      </service>
+      <service name="PartSelectSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IPartSelectSVC" />
+      </service>
+      <service name="mesSerialNumberOfLineSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesSerialNumberOfLineSVC" />
+      </service>
+      <service name="mesUnitDefectSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesUnitDefectSVC" />
+      </service>
+      <service name="luDefectSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IluDefectSVC" />
+      </service>
+      <service name="mesUnitDetailSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesUnitDetailSVC" />
+      </service>
+      <service name="ServiceHostingSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="IServiceHostingSVC" />
+      </service>
+
+      <service name="mesPackageSVC" behaviorConfiguration="CalculatorServiceBehavior">
+        <endpoint address="" binding="customBinding" bindingConfiguration="BasicHttpBinding" contract="ImesPackageSVC" />
+      </service>      
+      
+      
+      
+    </services>    
+      
+    <extensions>
+      <bindingElementExtensions>
+        <add name="gzipMessageEncoding" type="GZipEncoder.GZipMessageEncodingElement, GZipEncoder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+      </bindingElementExtensions>
+    </extensions>
+
+    <bindings>
+      <customBinding>
+        <binding name="BasicHttpBinding">
+          <!--当前绑定的安全认证模式-->
+          <security authenticationMode="MutualCertificate" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" messageProtectionOrder="SignBeforeEncrypt" />
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding" />
+          <httpTransport hostNameComparisonMode="StrongWildcard"
+                         manualAddressing="False"
+                         maxReceivedMessageSize="2147483647"
+                         authenticationScheme="Anonymous"
+                         bypassProxyOnLocal="False"
+                         realm=""
+                         useDefaultWebProxy="True" />
+        </binding>
+      </customBinding>
+    </bindings>    
+    
+      
+        
+    <behaviors>
+      <serviceBehaviors>
+        <behavior name="CalculatorServiceBehavior">
+          <!-- httpGetEnabled - bool类型的值，表示是否允许通过HTTP的get方法获取sevice的WSDL元数据
+               httpGetUrl - 如果httpGetEnabled为true，这个属性指示使用哪个URL地址发布服务的WSDL，
+               如果这个属性没有设置，则使用服务的HTTP类型的baseAddress后面加上?WSDL
+          -->
+          <serviceMetadata httpGetEnabled="true"/>
+          <serviceDebug includeExceptionDetailInFaults="false"/>
+      
+          <!-- storeName - 证书的存储区，可能值为：AddressBook，AuthRoot，CertificateAuthority Disallowed，My，Root，TrustedPeople，TrustedPublisher 
+                storeLocation - 证书存储位置，可能值为：CurrentUser，LocalMachine
+          -->
+          <!--<serviceCredentials>
+            <serviceCertificate storeLocation="CurrentUser" findValue="MyServer" storeName="My" x509FindType="FindBySubjectName" />
+            <clientCertificate>
+              <authentication certificateValidationMode="None"/>
+            </clientCertificate>
+          </serviceCredentials>-->
+          <serviceCredentials>
+            <clientCertificate>
+              <authentication certificateValidationMode="Custom" customCertificateValidatorType="SecurityWcf.Core.ServiceX509CertificateValidator, SecurityWcf.Core"/>
+            </clientCertificate>
+          </serviceCredentials>          
+                
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+
+    <serviceHostingEnvironment multipleSiteBindingsEnabled="true"/>
+  </system.serviceModel>
+  
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true"/>
+  </system.webServer>
+</configuration>

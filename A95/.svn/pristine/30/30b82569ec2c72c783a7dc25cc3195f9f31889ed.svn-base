@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net"/>
+  </configSections>
+  <appSettings>
+    <add key="WebDAL" value="App.DBServerDAL"/>
+    <add key="ClientSettingsProvider.ServiceUri" value=""/>
+    <add key="url" value=""/>
+    <!--<add key="PrintFG_Type" value="1" />-->
+    <add key="Print_TemplateType" value="1"/>   <!-- 1:CodeSoft 2:Bartender-->
+    <add key="WindowsVer" value="64"/>          <!-- 32 64  2019-12-24 停用 -->
+    <add key="UserID" value="admin"/>
+    <add key="StationTypeID" value="23"/>
+    <add key="LineID" value="7"/>
+    <add key="StationID" value="23"/>
+    <add key="ApplicationTypeID" value="26"/>
+    <add key="OpenLogFile" value="Y"/>
+    <add key="Port" value="6899"/>
+    
+    <add key="ServiceCertificate" value="config/COServer.cer"/>
+  </appSettings>
+
+  <!--日志文件配置-->
+  <log4net>
+    <appender name="RollingLogFileAppender" type="log4net.Appender.RollingFileAppender">
+      <!--文件存放位置-->
+      <file value="log\\"/>
+      <appendToFile value="true"/>
+      <rollingStyle value="Date"/>
+      <datePattern value="yyyyMM\\yyyyMMdd'.txt'"/>
+      <staticLogFileName value="false"/>
+      <param name="MaxSizeRollBackups" value="100"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%date [%thread] %-5level- %message%newline"/>
+      </layout>
+    </appender>
+    <root>
+      <level value="ERROR"/>
+      <appender-ref ref="RollingLogFileAppender"/>
+      <level value="DEBUG"/>
+      <appender-ref ref="RollingLogFileAppender"/>
+    </root>
+  </log4net>  
+  
+  <connectionStrings>
+
+  </connectionStrings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2"/>
+  </startup>
+  <system.serviceModel>
+    <bindings>
+      <customBinding>
+        <binding name="CustomBinding_ImesEmployeeSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IPartSelectSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IluApplicationTypeSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IluDefectSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IluEmployeeGroupSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IluMachineFamilySVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IluMachineFamilyTypeSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IluPartDetailDefSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IluPartFamilySVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IluPartFamilyTypeSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IluSerialNumberTypeSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IluUnitComponentTypeSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IluUnitStatusSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesHistorySVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesMachineSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesPartDetailSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesPartSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesProductionOrderSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesProductStructureSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesRouteDetailSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesRouteMachineMapSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesRouteMapSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesRouteSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesSerialNumberOfLineSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesSerialNumberSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesStationSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesStationTypeSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesUnitComponentSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesUnitDefectSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesUnitDetailSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesUnitSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesUnitStateSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IServiceHostingSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IsysStatusSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_ImesPackageSVC">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <gzipMessageEncoding innerMessageEncoding="textMessageEncoding"/>
+          <httpTransport manualAddressing="false" maxReceivedMessageSize="2147483647" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" proxyAuthenticationScheme="Anonymous" realm="" useDefaultWebProxy="true"/>
+        </binding>
+        <binding name="CustomBinding_IPartSelectSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IluApplicationTypeSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IluDefectSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IluEmployeeGroupSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IluMachineFamilySVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IluMachineFamilyTypeSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IluPartDetailDefSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IluPartFamilySVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IluPartFamilyTypeSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IluSerialNumberTypeSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IluUnitComponentTypeSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IluUnitStatusSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesEmployeeSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesHistorySVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesMachineSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesPackageSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesPartDetailSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesPartSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesProductionOrderSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesProductStructureSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesRouteDetailSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesRouteMachineMapSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesRouteMapSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesRouteSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesSerialNumberOfLineSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesSerialNumberSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesStationSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesStationTypeSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesUnitComponentSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesUnitDefectSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesUnitDetailSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesUnitSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_ImesUnitStateSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IServiceHostingSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+        <binding name="CustomBinding_IsysStatusSVC1">
+          <security defaultAlgorithmSuite="Default" authenticationMode="MutualCertificate" requireDerivedKeys="true" includeTimestamp="true" messageProtectionOrder="SignBeforeEncrypt" messageSecurityVersion="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" requireSignatureConfirmation="true">
+            <localClientSettings detectReplays="true"/>
+            <localServiceSettings detectReplays="true"/>
+          </security>
+          <textMessageEncoding/>
+          <httpTransport/>
+        </binding>
+      </customBinding>
+    </bindings>
+    <client>
+      
+      <endpoint address="http://localhost:55368/luApplicationType.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IluApplicationTypeSVC" contract="luApplicationTypeService.IluApplicationTypeSVC" name="CustomBinding_IluApplicationTypeSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>        
+      </endpoint>
+        
+      <endpoint address="http://localhost:55368/luEmployeeGroup.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IluEmployeeGroupSVC" contract="luEmployeeGroupService.IluEmployeeGroupSVC" name="CustomBinding_IluEmployeeGroupSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/luMachineFamily.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IluMachineFamilySVC" contract="luMachineFamilyService.IluMachineFamilySVC" name="CustomBinding_IluMachineFamilySVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>        
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/luMachineFamilyType.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IluMachineFamilyTypeSVC" contract="luMachineFamilyTypeService.IluMachineFamilyTypeSVC" name="CustomBinding_IluMachineFamilyTypeSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>        
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/luPartDetailDef.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IluPartDetailDefSVC" contract="luPartDetailDefService.IluPartDetailDefSVC" name="CustomBinding_IluPartDetailDefSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/luPartFamily.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IluPartFamilySVC" contract="luPartFamilyService.IluPartFamilySVC" name="CustomBinding_IluPartFamilySVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/luPartFamilyType.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IluPartFamilyTypeSVC" contract="luPartFamilyTypeService.IluPartFamilyTypeSVC" name="CustomBinding_IluPartFamilyTypeSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/luSerialNumberType.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IluSerialNumberTypeSVC" contract="luSerialNumberTypeService.IluSerialNumberTypeSVC" name="CustomBinding_IluSerialNumberTypeSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/luUnitComponentType.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IluUnitComponentTypeSVC" contract="luUnitComponentTypeService.IluUnitComponentTypeSVC" name="CustomBinding_IluUnitComponentTypeSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/luUnitStatus.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IluUnitStatusSVC" contract="luUnitStatusService.IluUnitStatusSVC" name="CustomBinding_IluUnitStatusSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesEmployee.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesEmployeeSVC" contract="mesEmployeeService.ImesEmployeeSVC" name="CustomBinding_ImesEmployeeSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesHistory.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesHistorySVC" contract="mesHistoryService.ImesHistorySVC" name="CustomBinding_ImesHistorySVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesMachine.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesMachineSVC" contract="mesMachineService.ImesMachineSVC" name="CustomBinding_ImesMachineSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesPart.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesPartSVC" contract="mesPartService.ImesPartSVC" name="CustomBinding_ImesPartSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesPartDetail.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesPartDetailSVC" contract="mesPartDetailService.ImesPartDetailSVC" name="CustomBinding_ImesPartDetailSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesProductionOrder.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesProductionOrderSVC" contract="mesProductionOrderService.ImesProductionOrderSVC" name="CustomBinding_ImesProductionOrderSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesProductStructure.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesProductStructureSVC" contract="mesProductStructureService.ImesProductStructureSVC" name="CustomBinding_ImesProductStructureSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesRoute.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesRouteSVC" contract="mesRouteService.ImesRouteSVC" name="CustomBinding_ImesRouteSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesRouteDetail.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesRouteDetailSVC" contract="mesRouteDetailService.ImesRouteDetailSVC" name="CustomBinding_ImesRouteDetailSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesRouteMachineMap.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesRouteMachineMapSVC" contract="mesRouteMachineMapService.ImesRouteMachineMapSVC" name="CustomBinding_ImesRouteMachineMapSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesRouteMap.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesRouteMapSVC" contract="mesRouteMapService.ImesRouteMapSVC" name="CustomBinding_ImesRouteMapSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesSerialNumber.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesSerialNumberSVC" contract="mesSerialNumberService.ImesSerialNumberSVC" name="CustomBinding_ImesSerialNumberSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesStation.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesStationSVC" contract="mesStationService.ImesStationSVC" name="CustomBinding_ImesStationSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesStationType.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesStationTypeSVC" contract="mesStationTypeService.ImesStationTypeSVC" name="CustomBinding_ImesStationTypeSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesUnit.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesUnitSVC" contract="mesUnitService.ImesUnitSVC" name="CustomBinding_ImesUnitSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesUnitComponent.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesUnitComponentSVC" contract="mesUnitComponentService.ImesUnitComponentSVC" name="CustomBinding_ImesUnitComponentSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesUnitState.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesUnitStateSVC" contract="mesUnitStateService.ImesUnitStateSVC" name="CustomBinding_ImesUnitStateSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>        
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/sysStatus.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IsysStatusSVC" contract="sysStatusService.IsysStatusSVC" name="CustomBinding_IsysStatusSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/PartSelectSVC.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IPartSelectSVC" contract="PartSelectService.IPartSelectSVC" name="CustomBinding_IPartSelectSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesSerialNumberOfLineSVC.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesSerialNumberOfLineSVC" contract="mesSerialNumberOfLineService.ImesSerialNumberOfLineSVC" name="CustomBinding_ImesSerialNumberOfLineSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesUnitDefect.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesUnitDefectSVC" contract="mesUnitDefectService.ImesUnitDefectSVC" name="CustomBinding_ImesUnitDefectSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/luDefect.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IluDefectSVC" contract="luDefectService.IluDefectSVC" name="CustomBinding_IluDefectSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/mesUnitDetail.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesUnitDetailSVC" contract="mesUnitDetailService.ImesUnitDetailSVC" name="CustomBinding_ImesUnitDetailSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>        
+      </endpoint>
+      
+      <endpoint address="http://localhost:55368/ServiceHosting.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_IServiceHostingSVC" contract="ServiceHostingService.IServiceHostingSVC" name="CustomBinding_IServiceHostingSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>        
+      </endpoint>
+
+      <endpoint address="http://localhost:55368/mesPackage.svc" behaviorConfiguration="CurstomBehavior" binding="customBinding" bindingConfiguration="CustomBinding_ImesPackageSVC" contract="mesPackageService.ImesPackageSVC" name="CustomBinding_ImesPackageSVC">
+        <identity>
+          <certificate encodedValue="MIIB8zCCAVygAwIBAgIQxnffJuImm49LSyhO/xQOZzANBgkqhkiG9w0BAQQFADATMREwDwYDVQQDEwhDT1NlcnZlcjAeFw0xOTA4MjIwMjAyMjVaFw0zOTEyMzEyMzU5NTlaMBMxETAPBgNVBAMTCENPU2VydmVyMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjl9w7KmOWDsUJZB2zM6FIA89NoGxlyw5XG+2BhMik3afJDQcmNU5KJajM5Gr72ba2Q9qDco1R07vk6qAkCQhNLnsknGb15P3RDa9HVPeNDOF6d3VwrU/eKDbaESHM/ckrfQI5Eil5+B/zF3qMQfYWfboXomRHBIul6Xg0l5DMEQIDAQABo0gwRjBEBgNVHQEEPTA7gBDR/BewqfuZeSG7nI7nWqu5oRUwEzERMA8GA1UEAxMIQ09TZXJ2ZXKCEMZ33ybiJpuPS0soTv8UDmcwDQYJKoZIhvcNAQEEBQADgYEAjxSOD4YTFq/tiqrRuEksSyUQn2TdCpXMmoJmjCqbluEcj2K8DHYb4o7AoCmCkv+JrX3vYagkvdNCLiS84mzdufiAZagMMDb/Cj4VsUYbikOxg6uFKUY5MhqWfmlM36mv33ouRpriNbULlgnHCZFw2BFUeMRmOMlDKwR/YPUk2Ew="/>
+        </identity>
+      </endpoint>
+
+
+      <metadata>
+        <policyImporters>
+          <extension type="GZipEncoder.GZipMessageEncodingBindingElementImporter, GZipEncoder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
+        </policyImporters>
+      </metadata>
+    </client>
+
+    <!-- 扩展节点，配置消息压缩，解压缩 -->
+    <extensions>
+      <bindingElementExtensions>
+        <add name="gzipMessageEncoding" type="GZipEncoder.GZipMessageEncodingElement, GZipEncoder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
+      </bindingElementExtensions>
+    </extensions>
+
+    <behaviors>
+      <endpointBehaviors>
+        <behavior name="CurstomBehavior">
+          <!-- storeName - 证书的存储区，可能值为：AddressBook，AuthRoot，CertificateAuthority Disallowed，My，Root，TrustedPeople，TrustedPublisher 
+               storeLocation - 证书存储位置，可能值为：CurrentUser，LocalMachine
+          -->
+          <!--<clientCredentials>
+            <clientCertificate findValue="MyClient" storeLocation="CurrentUser" storeName="My" x509FindType="FindBySubjectName" />
+            <serviceCertificate>
+              <authentication certificateValidationMode="None" />
+            </serviceCertificate>
+          </clientCredentials>-->
+          <clientCredentials>
+            <serviceCertificate>
+              <authentication certificateValidationMode="Custom" customCertificateValidatorType="SecurityWcf.Core.ClientX509CertificateValidator, SecurityWcf.Core"/>
+            </serviceCertificate>
+          </clientCredentials>
+        </behavior>
+      </endpointBehaviors>
+    </behaviors>    
+    
+  </system.serviceModel>
+  
+  
+  <system.web>          
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">      
+      <providers>        
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri=""/>
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400"/>
+      </providers>
+    </roleManager>
+  </system.web>
+
+</configuration>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a066fd56-5921-4dd0-a762-b501e3849d28" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/luSerialNumberType.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="luSerialNumberType.xsd" MetadataType="Schema" ID="94f7a430-7e61-43af-8441-16d9314026dc" SourceId="1" SourceUrl="http://localhost:55368/luSerialNumberType.svc?xsd=xsd0" />
+    <MetadataFile FileName="luSerialNumberType.disco" MetadataType="Disco" ID="f4c4ecfb-1cb1-47d8-96b8-1634c79bc546" SourceId="1" SourceUrl="http://localhost:55368/luSerialNumberType.svc?disco" />
+    <MetadataFile FileName="luSerialNumberType1.xsd" MetadataType="Schema" ID="5e82973f-7ba3-4155-ba0f-4eff6ad489ec" SourceId="1" SourceUrl="http://localhost:55368/luSerialNumberType.svc?xsd=xsd1" />
+    <MetadataFile FileName="luSerialNumberType2.xsd" MetadataType="Schema" ID="729bd0d6-1c15-4875-9bc5-6a71f71e03f1" SourceId="1" SourceUrl="http://localhost:55368/luSerialNumberType.svc?xsd=xsd2" />
+    <MetadataFile FileName="luSerialNumberTypeSVC.wsdl" MetadataType="Wsdl" ID="a7b245bc-8e33-47b5-bcf4-94dc2a196540" SourceId="1" SourceUrl="http://localhost:55368/luSerialNumberType.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

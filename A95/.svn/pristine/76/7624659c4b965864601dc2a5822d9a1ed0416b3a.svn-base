@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8e94dbc1-e281-4b91-90ab-31944f60ab13" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesHistory.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesHistory.xsd" MetadataType="Schema" ID="d56f6628-e5d2-4575-b9b4-a0e909cafc6e" SourceId="1" SourceUrl="http://localhost:55368/mesHistory.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesHistory1.xsd" MetadataType="Schema" ID="caea4870-862a-41ed-80b4-38dfc2774255" SourceId="1" SourceUrl="http://localhost:55368/mesHistory.svc?xsd=xsd1" />
+    <MetadataFile FileName="mesHistorySVC.wsdl" MetadataType="Wsdl" ID="61616b0b-0fa8-4f26-a798-ed9eb9ad66c6" SourceId="1" SourceUrl="http://localhost:55368/mesHistory.svc?wsdl" />
+    <MetadataFile FileName="mesHistory.disco" MetadataType="Disco" ID="444530bd-7fb5-4064-89ed-ebf582afdda2" SourceId="1" SourceUrl="http://localhost:55368/mesHistory.svc?disco" />
+    <MetadataFile FileName="mesHistory2.xsd" MetadataType="Schema" ID="0ef2308b-a31f-481c-be36-e2293c0a3e18" SourceId="1" SourceUrl="http://localhost:55368/mesHistory.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

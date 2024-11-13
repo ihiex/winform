@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b89ee67a-880a-456d-a431-477fb0e03d82" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55368/mesUnitComponent.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mesUnitComponent.xsd" MetadataType="Schema" ID="dc17e173-a580-49e5-ace8-43dfaeb4afe9" SourceId="1" SourceUrl="http://localhost:55368/mesUnitComponent.svc?xsd=xsd0" />
+    <MetadataFile FileName="mesUnitComponentSVC.wsdl" MetadataType="Wsdl" ID="afdb26f5-011c-4efd-92ca-ed0767738c26" SourceId="1" SourceUrl="http://localhost:55368/mesUnitComponent.svc?wsdl" />
+    <MetadataFile FileName="mesUnitComponent.disco" MetadataType="Disco" ID="11630207-5f93-44a3-b2b1-fdcc60bdb414" SourceId="1" SourceUrl="http://localhost:55368/mesUnitComponent.svc?disco" />
+    <MetadataFile FileName="mesUnitComponent1.xsd" MetadataType="Schema" ID="3276eca2-b04d-4dfb-95f6-57323f329f8f" SourceId="1" SourceUrl="http://localhost:55368/mesUnitComponent.svc?xsd=xsd2" />
+    <MetadataFile FileName="mesUnitComponent2.xsd" MetadataType="Schema" ID="ed58f86c-fb32-4c2c-9147-7981452e3e3c" SourceId="1" SourceUrl="http://localhost:55368/mesUnitComponent.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
